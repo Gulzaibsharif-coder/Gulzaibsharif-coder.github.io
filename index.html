@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gulzaib Sharif | AI, ML & Bioinformatics</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f9fc;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.96);
+            border-bottom: 1px solid #e5e9f0;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #344054;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 8%;
+            background: linear-gradient(135deg, #eef5ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e8f1ff;
+            color: #2563eb;
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(45px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #475467;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 720px;
+            font-size: 18px;
+            color: #667085;
+            margin-bottom: 30px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #cbd5e1;
+            color: #172033;
+            background: white;
+        }
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            color: #667085;
+            margin-bottom: 45px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .about-card {
+            padding: 30px;
+            border: 1px solid #e5e9f0;
+            border-radius: 14px;
+            background: #fafcff;
+        }
+
+        .projects {
+            background: #f7f9fc;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 30px;
+            border-radius: 14px;
+            border: 1px solid #e5e9f0;
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #667085;
+            margin-bottom: 18px;
+        }
+
+        .tools {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2563eb;
+        }
+
+        .experience {
+            background: white;
+        }
+
+        .experience-item {
+            border-left: 3px solid #2563eb;
+            padding: 5px 0 25px 25px;
+            margin-bottom: 25px;
+        }
+
+        .experience-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .experience-item span {
+            color: #667085;
+            font-size: 14px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: white;
+            border: 1px solid #dbe2ea;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .research {
+            background: #f7f9fc;
+        }
+
+        .research-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .research-item {
+            background: #eaf2ff;
+            color: #1d4ed8;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+        }
+
+        .contact {
+            background: #172033;
+            color: white;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            max-width: 650px;
+            margin: 15px auto 30px;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            margin: 8px 15px;
+            display: inline-block;
+        }
+
+        footer {
+            background: #111827;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .about-grid,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Gulzaib Sharif</div>
+
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">AI • Machine Learning • Bioinformatics</div>
+
+        <h1>Gulzaib Sharif</h1>
+
+        <h2>Machine Learning & Bioinformatics</h2>
+
+        <p>
+            I build practical AI and machine-learning solutions for
+            data-driven problems in bioinformatics and beyond.
+        </p>
+
+        <div class="buttons">
+            <a class="primary" href="#projects">View Projects</a>
+
+            <a class="secondary"
+               href="https://github.com/Gulzaibsharif-coder"
+               target="_blank">
+                GitHub
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about" class="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <p class="section-intro">
+        I am a Bioinformatics undergraduate at the International Islamic
+        University Islamabad with hands-on experience in Python,
+        machine learning, data analysis, and computational biology.
+        I am currently working as a Machine Learning Intern at FlyRank AI.
+    </p>
+
+    <div class="about-grid">
+
+        <div class="about-card">
+            <h3>What I Do</h3>
+            <p>
+                I work with machine learning, data preprocessing,
+                feature engineering, model evaluation, biological
+                data analysis, and computational biology.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>What I Care About</h3>
+            <p>
+                I am interested in applying artificial intelligence
+                and data science to challenging problems in
+                bioinformatics and computational research.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="projects" class="projects">
+
+    <h2 class="section-title">Selected Projects</h2>
+
+    <p class="section-intro">
+        A selection of machine learning, programming, and
+        computational biology projects.
+    </p>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <h3>Google Search Ranking ML Capstone</h3>
+
+            <p>
+                Built machine learning workflows for ranking analysis
+                using data preprocessing, feature engineering,
+                model evaluation, and analytical workflows.
+            </p>
+
+            <div class="tools">
+                Python • Pandas • Scikit-learn • Machine Learning
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <h3>Hand Gesture Recognition</h3>
+
+            <p>
+                Developed a real-time hand gesture recognition system
+                using computer vision and hand-tracking technologies.
+            </p>
+
+            <div class="tools">
+                Python • OpenCV • MediaPipe
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <h3>DNA Mutation Detector</h3>
+
+            <p>
+                Created a Java application for comparing DNA sequences
+                and identifying mutations.
+            </p>
+
+            <div class="tools">
+                Java • DNA Sequence Analysis
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <h3>Nucleotide Counter & DNA Sequence Analyzer</h3>
+
+            <p>
+                Developed a Java program for analyzing nucleotide
+                frequencies and calculating sequence percentages.
+            </p>
+
+            <div class="tools">
+                Java • Bioinformatics
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="experience" class="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <p class="section-intro">
+        Professional and research-related experience.
+    </p>
+
+
+    <div class="experience-item">
+
+        <h3>Machine Learning Intern — FlyRank AI</h3>
+
+        <span>June 2026 – Present</span>
+
+        <p>
+            Developing machine learning solutions using Python,
+            performing exploratory data analysis, preprocessing,
+            feature engineering, model evaluation, and collaborative
+            Git/GitHub workflows.
+        </p>
+
+    </div>
+
+
+    <div class="experience-item">
+
+        <h3>Editor-in-Chief — International Journal of Bioinformatics and Artificial Intelligence</h3>
+
+        <span>June 2026 – Present</span>
+
+        <p>
+            Coordinating peer review and publication workflows,
+            maintaining publication quality, and communicating
+            with authors and reviewers.
+        </p>
+
+    </div>
+
+
+    <div class="experience-item">
+
+        <h3>Public Dealing Officer — International Research Institute Pakistan</h3>
+
+        <span>March 2025 – Present</span>
+
+        <p>
+            Managing stakeholder communication, administrative
+            coordination, organizational operations, and documentation.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section id="skills">
+
+    <h2 class="section-title">Technical Skills</h2>
+
+    <p class="section-intro">
+        Technologies and methods I work with.
+    </p>
+
+    <div class="skills">
+
+        <span class="skill">Python</span>
+        <span class="skill">Java</span>
+        <span class="skill">C</span>
+        <span class="skill">C++</span>
+
+        <span class="skill">Scikit-learn</span>
+        <span class="skill">Pandas</span>
+        <span class="skill">NumPy</span>
+
+        <span class="skill">Data Visualization</span>
+        <span class="skill">Feature Engineering</span>
+        <span class="skill">Model Evaluation</span>
+
+        <span class="skill">OpenCV</span>
+        <span class="skill">MediaPipe</span>
+
+        <span class="skill">Git</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">Google Colab</span>
+
+        <span class="skill">Bioinformatics</span>
+        <span class="skill">Computational Biology</span>
+        <span class="skill">Molecular Data Analysis</span>
+
+    </div>
+
+</section>
+
+
+<section class="research">
+
+    <h2 class="section-title">Research Interests</h2>
+
+    <p class="section-intro">
+        Areas I am interested in exploring through research and
+        computational approaches.
+    </p>
+
+    <div class="research-list">
+
+        <span class="research-item">Artificial Intelligence</span>
+        <span class="research-item">Machine Learning</span>
+        <span class="research-item">Bioinformatics</span>
+        <span class="research-item">Computational Biology</span>
+        <span class="research-item">Molecular Data Analysis</span>
+        <span class="research-item">Protein Structure Analysis</span>
+        <span class="research-item">Drug Discovery</span>
+        <span class="research-item">Data Science</span>
+
+    </div>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+    <h2 class="section-title">Let's Connect</h2>
+
+    <p>
+        I am interested in AI, machine learning, bioinformatics,
+        computational biology, research, and data-driven projects.
+    </p>
+
+    <div class="contact-links">
+
+        <a href="mailto:gul.bsbi775@stu.iiu.edu.pk">
+            Email
+        </a>
+
+        <a href="https://www.linkedin.com/in/gulzaibsharif"
+           target="_blank">
+            LinkedIn
+        </a>
+
+        <a href="https://github.com/Gulzaibsharif-coder"
+           target="_blank">
+            GitHub
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Gulzaib Sharif. Built for learning, research, and professional growth.
+</footer>
+
+</body>
+</html>
