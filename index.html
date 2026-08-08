@@ -1,40 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gulzaib Sharif | AI, Machine Learning & Bioinformatics</title>
+<title>Gulzaib Sharif | AI • Machine Learning • Bioinformatics</title>
 
 <meta name="description"
 content="Gulzaib Sharif — Bioinformatics student, Machine Learning practitioner, academic writer and Editor-in-Chief of IJBAI.">
 
 <style>
 
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 :root{
     --navy:#10243a;
-    --blue:#1677c8;
-    --blue2:#2d8fe0;
-    --light:#f6f9fc;
-    --text:#1d2b3a;
-    --muted:#66788a;
-    --border:#dce6ef;
+    --navy2:#173b5d;
+    --blue:#1478c9;
+    --blue-light:#eaf5fd;
+    --cyan:#20b8d4;
+    --text:#24384b;
+    --muted:#66798b;
+    --border:#dce6ee;
+    --bg:#ffffff;
+    --soft:#f6f9fc;
     --white:#ffffff;
-    --shadow:0 15px 45px rgba(16,36,58,.10);
+    --shadow:0 20px 60px rgba(16,36,58,.10);
 }
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:Inter,Segoe UI,Arial,sans-serif;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
     background:#ffffff;
     color:var(--text);
     line-height:1.7;
+}
+
+button,
+input,
+textarea{
+    font-family:inherit;
 }
 
 a{
@@ -47,19 +69,31 @@ a{
     margin:auto;
 }
 
-/* ================= NAVIGATION ================= */
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
-    position:sticky;
+    position:fixed;
     top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(14px);
+    left:0;
+    right:0;
+
+    height:78px;
+
+    z-index:9999;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(15px);
+
     border-bottom:1px solid var(--border);
 }
 
 .nav-inner{
-    height:76px;
+    height:100%;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -68,7 +102,9 @@ nav{
 .logo{
     font-size:25px;
     font-weight:900;
+
     color:var(--navy);
+
     letter-spacing:-1px;
 }
 
@@ -79,91 +115,158 @@ nav{
 .nav-links{
     display:flex;
     align-items:center;
-    gap:30px;
+    gap:28px;
 }
 
-.nav-links a{
-    color:#3c5064;
-    font-weight:650;
+.nav-btn{
+    background:none;
+    border:none;
+
+    color:#43576a;
+
+    font-size:15px;
+    font-weight:700;
+
+    cursor:pointer;
+
     transition:.25s;
 }
 
-.nav-links a:hover{
+.nav-btn:hover{
+    color:var(--blue);
+}
+
+.nav-btn.active{
     color:var(--blue);
 }
 
 .nav-contact{
-    padding:10px 20px;
     border:1.5px solid var(--blue);
+
+    padding:9px 20px;
+
     border-radius:30px;
-    color:var(--blue)!important;
+
+    color:var(--blue);
 }
 
 .nav-contact:hover{
     background:var(--blue);
-    color:white!important;
+    color:white;
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
-    min-height:calc(100vh - 76px);
+    min-height:100vh;
+
+    padding-top:78px;
+
     display:flex;
     align-items:center;
+
     background:
-        radial-gradient(circle at 80% 25%,rgba(22,119,200,.10),transparent 25%),
-        linear-gradient(135deg,#ffffff 0%,#f7fbff 100%);
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(20,120,201,.10),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f7fbff 100%
+        );
+
     overflow:hidden;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.05fr .95fr;
-    gap:70px;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    gap:60px;
+
     align-items:center;
+
     padding:70px 0;
 }
 
 .eyebrow{
     display:inline-flex;
+
     align-items:center;
+
     gap:9px;
+
     padding:9px 17px;
-    border:1px solid #b9d8ef;
-    background:#f5fbff;
-    color:#176ca9;
+
+    background:#f3faff;
+
+    border:1px solid #b9d9ed;
+
     border-radius:30px;
-    font-weight:700;
+
+    color:#176ba6;
+
+    font-weight:750;
+
     margin-bottom:25px;
 }
 
 .dot{
     width:9px;
     height:9px;
-    background:#20b77b;
+
     border-radius:50%;
-    box-shadow:0 0 0 5px rgba(32,183,123,.10);
+
+    background:#20b57a;
+
+    box-shadow:
+        0 0 0 5px
+        rgba(32,181,122,.10);
 }
 
 .hero h1{
-    font-size:clamp(60px,8vw,108px);
-    line-height:.92;
+    font-size:
+        clamp(65px,8vw,110px);
+
+    line-height:.91;
+
     letter-spacing:-6px;
+
     color:var(--navy);
+
     margin-bottom:30px;
 }
 
 .hero h1 span{
-    background:linear-gradient(90deg,#1677c8,#496de8);
+    background:
+        linear-gradient(
+            90deg,
+            #1478c9,
+            #4c72e8
+        );
+
     -webkit-background-clip:text;
+
     color:transparent;
 }
 
 .hero-lead{
-    font-size:23px;
-    color:#5d7184;
     max-width:760px;
-    margin-bottom:22px;
+
+    font-size:22px;
+
+    color:#617589;
+
+    margin-bottom:20px;
 }
 
 .hero-lead strong{
@@ -171,69 +274,103 @@ nav{
 }
 
 .hero-description{
+    max-width:700px;
+
     font-size:17px;
-    color:#6a7d8f;
-    max-width:690px;
+
+    color:#718496;
+
     margin-bottom:32px;
 }
 
 .hero-buttons{
     display:flex;
+
     flex-wrap:wrap;
-    gap:13px;
+
+    gap:12px;
 }
 
 .btn{
     display:inline-flex;
+
     align-items:center;
     justify-content:center;
-    gap:9px;
-    padding:14px 23px;
+
+    gap:8px;
+
+    padding:14px 22px;
+
     border-radius:10px;
-    font-weight:800;
+
     border:1px solid var(--border);
-    transition:.25s;
+
+    font-weight:800;
+
     cursor:pointer;
+
+    transition:.25s;
 }
 
 .btn-primary{
     background:var(--navy);
-    color:white;
+
     border-color:var(--navy);
+
+    color:white;
 }
 
 .btn-primary:hover{
     background:var(--blue);
+
     border-color:var(--blue);
+
     transform:translateY(-2px);
 }
 
 .btn-outline{
     background:white;
+
     color:var(--navy);
 }
 
 .btn-outline:hover{
     border-color:var(--blue);
+
     color:var(--blue);
+
     transform:translateY(-2px);
 }
 
-/* ================= AI VISUAL ================= */
+
+/* =========================================================
+   HERO AI VISUAL
+========================================================= */
 
 .ai-stage{
-    height:510px;
+    height:500px;
+
     position:relative;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
 }
 
 .orbit{
     position:absolute;
-    border:1px solid rgba(22,119,200,.18);
+
+    border:1px solid
+        rgba(20,120,201,.17);
+
     border-radius:50%;
-    animation:rotate 18s linear infinite;
+
+    animation:
+        orbitRotate
+        20s
+        linear
+        infinite;
 }
 
 .orbit.one{
@@ -244,508 +381,974 @@ nav{
 .orbit.two{
     width:310px;
     height:310px;
-    animation-duration:13s;
+
+    animation-duration:14s;
+
     animation-direction:reverse;
 }
 
 .orbit.three{
     width:190px;
     height:190px;
+
     animation-duration:9s;
 }
 
 .ai-core{
     width:165px;
     height:165px;
-    border-radius:50%;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    background:linear-gradient(145deg,#0e2a46,#187dcc);
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #102c48,
+            #187fcf
+        );
+
     color:white;
-    font-size:43px;
+
+    font-size:44px;
+
     font-weight:900;
+
     box-shadow:
-        0 0 0 18px rgba(22,119,200,.07),
-        0 0 80px rgba(22,119,200,.25);
-    z-index:3;
+        0 0 0 18px
+        rgba(20,120,201,.06),
+
+        0 0 90px
+        rgba(20,120,201,.22);
+
+    z-index:5;
 }
 
 .ai-label{
     position:absolute;
-    padding:12px 17px;
+
+    padding:11px 16px;
+
     background:white;
+
     border:1px solid var(--border);
+
     border-radius:12px;
+
     box-shadow:var(--shadow);
-    font-weight:750;
+
     color:var(--navy);
-    animation:float 4s ease-in-out infinite;
+
+    font-weight:750;
+
+    animation:
+        floating
+        4s
+        ease-in-out
+        infinite;
 }
 
 .label-ml{
     top:30px;
-    right:40px;
+    right:30px;
 }
 
 .label-data{
-    left:10px;
-    top:160px;
+    top:165px;
+    left:0;
     animation-delay:1s;
 }
 
 .label-bio{
+    bottom:80px;
     left:45px;
-    bottom:85px;
     animation-delay:1.5s;
 }
 
 .label-research{
+    bottom:40px;
     right:0;
-    bottom:55px;
     animation-delay:.5s;
 }
 
 .particle{
     position:absolute;
+
     width:12px;
     height:12px;
-    background:#1dbbd7;
+
+    background:var(--cyan);
+
     border-radius:50%;
-    box-shadow:0 0 20px rgba(29,187,215,.6);
+
+    box-shadow:
+        0 0 22px
+        rgba(32,184,212,.6);
+
+    animation:
+        pulse
+        2.5s
+        infinite;
 }
 
-.p1{top:78px;left:45%;}
-.p2{right:17%;top:43%;}
-.p3{left:22%;bottom:22%;}
-
-@keyframes rotate{
-    from{transform:rotate(0deg)}
-    to{transform:rotate(360deg)}
+.p1{
+    top:70px;
+    left:44%;
 }
 
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
+.p2{
+    right:17%;
+    top:45%;
 }
 
-/* ================= SECTIONS ================= */
-
-section{
-    padding:100px 0;
+.p3{
+    left:21%;
+    bottom:22%;
 }
 
-section:nth-child(even){
-    background:#f8fbfe;
+@keyframes orbitRotate{
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes floating{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+        opacity:.8;
+    }
+
+    50%{
+        transform:scale(1.5);
+        opacity:1;
+    }
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+/*
+   IMPORTANT:
+   All content sections are hidden initially.
+   JavaScript displays only the section the visitor clicks.
+*/
+
+.content-section{
+    display:none;
+
+    min-height:calc(100vh - 78px);
+
+    padding:
+        120px
+        0
+        80px;
+
+    background:#ffffff;
+
+    animation:
+        sectionIn
+        .45s
+        ease;
+}
+
+.content-section.visible{
+    display:block;
+}
+
+@keyframes sectionIn{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .section-heading{
-    max-width:750px;
+    max-width:800px;
+
     margin-bottom:45px;
 }
 
 .kicker{
     color:var(--blue);
+
     font-size:14px;
+
     font-weight:900;
+
     text-transform:uppercase;
+
     letter-spacing:2px;
+
     margin-bottom:10px;
 }
 
 .section-heading h2{
-    font-size:45px;
+    font-size:
+        clamp(38px,5vw,56px);
+
     line-height:1.1;
+
+    letter-spacing:-2px;
+
     color:var(--navy);
-    margin-bottom:16px;
-    letter-spacing:-1.5px;
+
+    margin-bottom:15px;
 }
 
 .section-heading p{
     color:var(--muted);
+
     font-size:18px;
 }
 
-/* ================= ABOUT ================= */
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     gap:60px;
 }
 
 .about-text p{
-    margin-bottom:18px;
-    color:#607385;
+    color:#64788b;
+
     font-size:17px;
+
+    margin-bottom:18px;
 }
 
-.about-highlights{
+.highlights{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:16px;
 }
 
 .highlight{
     padding:25px;
+
+    background:#ffffff;
+
     border:1px solid var(--border);
-    background:white;
+
     border-radius:16px;
-    box-shadow:0 8px 30px rgba(16,36,58,.05);
+
+    box-shadow:
+        0 10px 35px
+        rgba(16,36,58,.05);
 }
 
 .highlight strong{
     display:block;
+
     color:var(--navy);
+
     font-size:20px;
-    margin-bottom:6px;
+
+    margin-bottom:5px;
 }
 
 .highlight span{
     color:var(--muted);
+
     font-size:14px;
 }
 
-/* ================= PROJECTS ================= */
+
+/* =========================================================
+   PROJECTS
+========================================================= */
 
 .projects{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:22px;
 }
 
 .project-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:28px;
-    transition:.3s;
     display:flex;
+
     flex-direction:column;
+
+    padding:28px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:.3s;
 }
 
 .project-card:hover{
     transform:translateY(-7px);
+
+    border-color:#a9cee8;
+
     box-shadow:var(--shadow);
-    border-color:#b8d8ef;
 }
 
 .project-number{
     color:var(--blue);
+
+    font-size:13px;
+
     font-weight:900;
-    margin-bottom:25px;
+
+    margin-bottom:22px;
 }
 
 .project-card h3{
     color:var(--navy);
+
     font-size:23px;
+
     margin-bottom:12px;
 }
 
 .project-card p{
     color:var(--muted);
-    margin-bottom:22px;
+
     flex-grow:1;
+
+    margin-bottom:20px;
 }
 
 .tags{
     display:flex;
+
     flex-wrap:wrap;
-    gap:8px;
-    margin-bottom:24px;
+
+    gap:7px;
+
+    margin-bottom:22px;
 }
 
 .tag{
     background:#eef7fd;
-    color:#176ca9;
+
+    color:#176da8;
+
     padding:5px 10px;
+
     border-radius:20px;
+
     font-size:12px;
-    font-weight:700;
+
+    font-weight:750;
 }
 
 .project-link{
     color:var(--blue);
-    font-weight:800;
+
+    font-weight:850;
 }
 
-/* ================= RESEARCH ================= */
+
+/* =========================================================
+   RESEARCH
+========================================================= */
 
 .research-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     gap:25px;
 }
 
 .research-card{
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
     padding:30px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
 }
 
 .research-card h3{
     color:var(--navy);
-    font-size:23px;
+
+    font-size:24px;
+
     margin-bottom:12px;
 }
 
-.research-card p{
+.research-card p,
+.research-card li{
     color:var(--muted);
 }
 
 .research-card ul{
-    margin:15px 0 0 20px;
-    color:#647789;
+    margin:
+        15px
+        0
+        0
+        20px;
 }
 
 .research-card li{
     margin:7px 0;
 }
 
-/* ================= IJBAI ================= */
 
-.journal{
-    background:linear-gradient(135deg,#0e2943,#123e63);
-    color:white;
-    position:relative;
-    overflow:hidden;
+/* =========================================================
+   IJBAI
+========================================================= */
+
+.journal-section{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5faff
+        );
 }
 
-.journal:before{
-    content:"";
-    position:absolute;
-    width:500px;
-    height:500px;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:50%;
-    right:-150px;
-    top:-180px;
+.journal-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:25px;
 }
 
-.journal .section-heading h2,
-.journal .section-heading p{
-    color:white;
-}
+.journal-badge{
+    padding:8px 13px;
 
-.journal .kicker{
-    color:#62c9ff;
+    border-radius:20px;
+
+    background:#e8f5fd;
+
+    color:var(--blue);
+
+    font-size:12px;
+
+    font-weight:900;
 }
 
 .journal-grid{
     display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:45px;
+
+    grid-template-columns:
+        1.1fr
+        .9fr;
+
+    gap:40px;
+
     align-items:start;
 }
 
+.journal-main{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:
+        0 12px 40px
+        rgba(16,36,58,.05);
+}
+
+.journal-main h3{
+    color:var(--navy);
+
+    font-size:25px;
+
+    margin:
+        28px
+        0
+        15px;
+}
+
 .journal-main p{
-    color:#c5d7e7;
+    color:#617589;
+
     font-size:17px;
+
     margin-bottom:18px;
 }
 
 .journal-types{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
     gap:12px;
-    margin:25px 0;
 }
 
 .journal-type{
-    border:1px solid rgba(255,255,255,.13);
-    background:rgba(255,255,255,.05);
-    border-radius:12px;
     padding:15px;
-    color:#e4f1fb;
-    font-weight:700;
-}
 
-.journal-side{
-    background:white;
+    background:#f5faff;
+
+    border:1px solid #d7eaf7;
+
+    border-radius:12px;
+
     color:var(--navy);
-    padding:32px;
-    border-radius:20px;
-    box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+    font-weight:750;
 }
 
-.journal-side h3{
-    font-size:25px;
+.publish-card{
+    padding:35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #10243a,
+            #174b76
+        );
+
+    color:white;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(16,36,58,.18);
+}
+
+.publish-card h3{
+    font-size:32px;
+
     margin-bottom:15px;
 }
 
-.journal-side p{
-    color:var(--muted);
+.publish-card p{
+    color:#d5e5f1;
+
     margin-bottom:20px;
 }
 
-.journal-btn{
+.publish-card ul{
+    margin:
+        15px
+        0
+        25px
+        20px;
+
+    color:#d8e7f1;
+}
+
+.publish-card li{
+    margin:7px 0;
+}
+
+.publish-btn{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     width:100%;
-    background:var(--blue);
-    color:white;
-    border-color:var(--blue);
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:white;
+
+    color:var(--navy);
+
+    font-weight:900;
+
     margin-bottom:10px;
+
+    transition:.25s;
 }
 
-.journal-btn:hover{
-    background:#0d63aa;
+.publish-btn:hover{
+    background:#dff2ff;
+
+    transform:translateY(-2px);
 }
 
-.journal-note{
-    font-size:13px;
-    color:#7a8997;
-    margin-top:15px;
+.publish-btn.secondary{
+    background:transparent;
+
+    color:white;
+
+    border:1px solid
+        rgba(255,255,255,.35);
 }
 
-/* ================= EXPERIENCE ================= */
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
 
 .timeline{
-    border-left:2px solid #cbddea;
-    margin-left:10px;
+    border-left:
+        2px solid
+        #cfe0ec;
+
     padding-left:35px;
+
+    margin-left:10px;
 }
 
 .timeline-item{
     position:relative;
+
     margin-bottom:40px;
 }
 
-.timeline-item:before{
+.timeline-item::before{
     content:"";
+
     position:absolute;
+
     left:-43px;
-    top:7px;
+
+    top:8px;
+
     width:13px;
     height:13px;
-    background:var(--blue);
+
     border-radius:50%;
+
+    background:var(--blue);
+
     border:4px solid white;
-    box-shadow:0 0 0 1px #bdd5e7;
+
+    box-shadow:
+        0 0 0 1px
+        #bdd5e7;
 }
 
 .timeline-item h3{
     color:var(--navy);
+
     font-size:23px;
 }
 
-.timeline-item .date{
+.timeline-date{
     color:var(--blue);
+
     font-weight:800;
-    margin:4px 0 10px;
+
+    margin:
+        4px
+        0
+        10px;
 }
 
 .timeline-item p{
     color:var(--muted);
 }
 
-/* ================= EDUCATION ================= */
+
+/* =========================================================
+   EDUCATION
+========================================================= */
 
 .education-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     gap:22px;
 }
 
 .edu-card{
+    padding:28px;
+
     background:white;
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:26px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:17px;
 }
 
 .edu-card h3{
     color:var(--navy);
-    margin-bottom:8px;
+
+    font-size:23px;
+
+    margin-bottom:6px;
 }
 
-.edu-card .institution{
+.edu-institution{
     color:var(--blue);
-    font-weight:750;
+
+    font-weight:800;
 }
 
 .edu-card p{
     color:var(--muted);
+
     margin-top:10px;
 }
 
-/* ================= CTA ================= */
 
-.cta{
-    background:#f1f7fc;
-    text-align:center;
+/* =========================================================
+   CONTACT / MESSAGE
+========================================================= */
+
+.contact-layout{
+    display:grid;
+
+    grid-template-columns:
+        .8fr
+        1.2fr;
+
+    gap:30px;
 }
 
-.cta-box{
-    max-width:850px;
-    margin:auto;
+.contact-info{
+    padding:32px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #10243a,
+            #174b76
+        );
+
+    color:white;
+
+    border-radius:20px;
 }
 
-.cta h2{
-    font-size:45px;
-    color:var(--navy);
+.contact-info h3{
+    font-size:28px;
+
     margin-bottom:15px;
 }
 
-.cta p{
-    color:var(--muted);
-    font-size:18px;
-    margin-bottom:30px;
+.contact-info p{
+    color:#d0e0eb;
+
+    margin-bottom:25px;
 }
 
-/* ================= CONTACT ================= */
+.contact-item{
+    padding:
+        15px
+        0;
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:25px;
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
 }
 
-.contact-card{
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:30px;
-    background:white;
+.contact-item strong{
+    display:block;
+
+    color:white;
+
+    margin-bottom:4px;
 }
 
-.contact-card h3{
-    color:var(--navy);
-    margin-bottom:10px;
-}
+.contact-item a{
+    color:#9ddaff;
 
-.contact-card p{
-    color:var(--muted);
-    margin-bottom:20px;
-}
-
-.contact-link{
-    color:var(--blue);
-    font-weight:800;
     word-break:break-word;
 }
 
-/* ================= FOOTER ================= */
+.message-card{
+    padding:32px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    box-shadow:
+        0 15px 50px
+        rgba(16,36,58,.07);
+}
+
+.message-card h3{
+    color:var(--navy);
+
+    font-size:28px;
+
+    margin-bottom:8px;
+}
+
+.message-card > p{
+    color:var(--muted);
+
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+
+    color:var(--navy);
+
+    font-weight:750;
+
+    margin-bottom:7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+    width:100%;
+
+    padding:13px 14px;
+
+    border:
+        1px solid
+        #ccdbe6;
+
+    border-radius:9px;
+
+    outline:none;
+
+    font-size:15px;
+
+    color:var(--text);
+
+    background:#fbfdff;
+
+    transition:.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+    border-color:var(--blue);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(20,120,201,.08);
+}
+
+.form-group textarea{
+    min-height:145px;
+
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--navy);
+
+    color:white;
+
+    font-weight:850;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.submit-btn:hover{
+    background:var(--blue);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
+    display:none;
+
     background:var(--navy);
-    color:#b9cad8;
-    padding:35px 0;
+
+    color:#b8cbd9;
+
+    padding:30px 0;
+}
+
+footer.visible{
+    display:block;
 }
 
 .footer-inner{
     display:flex;
+
     justify-content:space-between;
-    gap:20px;
+
     align-items:center;
+
+    gap:20px;
 }
 
 .footer-logo{
     color:white;
-    font-weight:900;
+
     font-size:20px;
+
+    font-weight:900;
 }
 
 .footer-links{
     display:flex;
+
     gap:20px;
 }
 
@@ -753,63 +1356,83 @@ footer{
     color:white;
 }
 
-/* ================= RESPONSIVE ================= */
 
-@media(max-width:900px){
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:950px){
 
     .nav-links{
-        display:none;
+        gap:15px;
+    }
+
+    .nav-btn{
+        font-size:13px;
     }
 
     .hero-grid,
     .about-grid,
     .journal-grid,
     .research-grid,
-    .contact-grid{
+    .contact-layout{
         grid-template-columns:1fr;
     }
 
     .projects{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:
+            1fr
+            1fr;
     }
 
     .education-grid{
         grid-template-columns:1fr;
     }
 
-    .hero{
-        min-height:auto;
-    }
-
-    .hero h1{
-        font-size:70px;
-    }
-
     .ai-stage{
-        height:420px;
+        height:400px;
     }
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
 
-    section{
-        padding:70px 0;
+    nav{
+        height:auto;
+
+        position:relative;
     }
 
-    .projects{
-        grid-template-columns:1fr;
+    .nav-inner{
+        min-height:75px;
+
+        flex-direction:column;
+
+        padding:14px 0;
+
+        gap:12px;
     }
 
-    .about-highlights{
-        grid-template-columns:1fr;
+    .nav-links{
+        width:100%;
+
+        overflow-x:auto;
+
+        padding-bottom:5px;
+
+        justify-content:flex-start;
     }
 
-    .journal-types{
-        grid-template-columns:1fr;
+    .hero{
+        padding-top:0;
+    }
+
+    .hero-grid{
+        padding:60px 0;
     }
 
     .hero h1{
-        font-size:58px;
+        font-size:60px;
+
         letter-spacing:-3px;
     }
 
@@ -818,15 +1441,30 @@ footer{
     }
 
     .ai-stage{
-        transform:scale(.82);
-        margin:-35px 0;
+        transform:scale(.8);
+
+        margin:
+            -50px
+            0;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .highlights{
+        grid-template-columns:1fr;
+    }
+
+    .journal-types{
+        grid-template-columns:1fr;
     }
 
     .footer-inner{
         flex-direction:column;
+
         text-align:center;
     }
-
 }
 
 </style>
@@ -835,89 +1473,186 @@ footer{
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+
+<!-- ========================================================
+     NAVIGATION
+========================================================= -->
 
 <nav>
+
 <div class="container nav-inner">
 
-<a href="#home" class="logo">
+<a href="#" class="logo">
 GULZAIB<span>.</span>
 </a>
 
 <div class="nav-links">
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#research">Research</a>
-<a href="#ijbai">IJBAI</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#contact" class="nav-contact">Contact</a>
+
+<button
+class="nav-btn"
+data-section="about">
+About
+</button>
+
+<button
+class="nav-btn"
+data-section="projects">
+Projects
+</button>
+
+<button
+class="nav-btn"
+data-section="research">
+Research
+</button>
+
+<button
+class="nav-btn"
+data-section="ijbai">
+IJBAI
+</button>
+
+<button
+class="nav-btn"
+data-section="experience">
+Experience
+</button>
+
+<button
+class="nav-btn"
+data-section="education">
+Education
+</button>
+
+<button
+class="nav-btn nav-contact"
+data-section="contact">
+Contact
+</button>
+
 </div>
 
 </div>
+
 </nav>
 
 
-<!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<!-- ========================================================
+     INTRODUCTION / HERO
+========================================================= -->
+
+<section
+class="hero"
+id="home">
 
 <div class="container hero-grid">
+
 
 <div>
 
 <div class="eyebrow">
+
 <span class="dot"></span>
+
 AI • Machine Learning • Bioinformatics • Research
+
 </div>
 
+
 <h1>
-Gulzaib<br>
+
+Gulzaib
+
+<br>
+
 <span>Sharif</span>
+
 </h1>
 
+
 <p class="hero-lead">
+
 Building at the intersection of
-<strong>Artificial Intelligence, Machine Learning, Bioinformatics</strong>
+
+<strong>
+Artificial Intelligence,
+Machine Learning,
+Bioinformatics
+</strong>
+
 and academic research.
+
 </p>
 
+
 <p class="hero-description">
-Bioinformatics student, machine learning learner, academic writer and
-Editor-in-Chief of the International Journal of Bioinformatics and
-Artificial Intelligence (IJBAI), working across computational biology,
-AI and data-driven research.
+
+Bioinformatics student, machine learning learner,
+academic writer and Editor-in-Chief of the
+International Journal of Bioinformatics and
+Artificial Intelligence (IJBAI).
+
 </p>
+
 
 <div class="hero-buttons">
 
-<a href="#projects" class="btn btn-primary">
-Explore Projects →
-</a>
 
-<a href="Gulzaib_Sharif_CV.pdf"
-class="btn btn-outline"
-target="_blank">
+<button
+class="btn btn-primary"
+data-section="projects">
+
+Explore My Projects →
+
+</button>
+
+
+<a
+href="Gulzaib_Sharif_CV.pdf"
+target="_blank"
+class="btn btn-outline">
+
 Download CV
+
 </a>
 
-<a href="https://github.com/Gulzaibsharif-coder"
+
+<a
+href="https://github.com/Gulzaibsharif-coder"
 target="_blank"
 rel="noopener noreferrer"
 class="btn btn-outline">
+
 GitHub ↗
+
 </a>
 
-<a href="https://www.linkedin.com/in/gulzaibsharif/"
+
+<a
+href="https://www.linkedin.com/in/gulzaibsharif/"
 target="_blank"
 rel="noopener noreferrer"
 class="btn btn-outline">
+
 LinkedIn ↗
+
 </a>
 
+
+<button
+class="btn btn-outline"
+data-section="ijbai">
+
+Publish With Us
+
+</button>
+
+
 </div>
 
 </div>
+
 
 
 <!-- AI VISUAL -->
@@ -925,127 +1660,203 @@ LinkedIn ↗
 <div class="ai-stage">
 
 <div class="orbit one"></div>
+
 <div class="orbit two"></div>
+
 <div class="orbit three"></div>
+
 
 <div class="ai-core">
 AI
 </div>
 
+
 <div class="ai-label label-ml">
 Machine Learning
 </div>
+
 
 <div class="ai-label label-data">
 Data Science
 </div>
 
+
 <div class="ai-label label-bio">
 Bioinformatics
 </div>
+
 
 <div class="ai-label label-research">
 Research
 </div>
 
+
 <div class="particle p1"></div>
+
 <div class="particle p2"></div>
+
 <div class="particle p3"></div>
 
 </div>
 
 </div>
+
 </section>
 
 
-<!-- ================= ABOUT ================= -->
 
-<section id="about">
+<!-- ========================================================
+     ABOUT
+========================================================= -->
+
+<section
+class="content-section"
+id="about">
 
 <div class="container">
 
+
 <div class="section-heading">
-<div class="kicker">About</div>
-<h2>Where computation meets biological research.</h2>
+
+<div class="kicker">
+About Me
+</div>
+
+<h2>
+Where computational thinking meets biological research.
+</h2>
+
 <p>
-I am building my skills across bioinformatics, machine learning,
-artificial intelligence and academic research.
+A final-year bioinformatics student developing practical
+skills in AI, machine learning, data analysis and academic research.
 </p>
+
 </div>
 
 
 <div class="about-grid">
 
+
 <div class="about-text">
 
 <p>
-I am a final-year BS student with an academic and technical interest
-in bioinformatics, artificial intelligence, machine learning and
-data-driven research.
+I am a final-year BS Bioinformatics student interested in the
+intersection of biological sciences, artificial intelligence,
+machine learning and computational research.
 </p>
 
 <p>
-My work combines computational thinking with biological and research
-problems. I am particularly interested in using machine learning and
-data analysis to understand complex biological information.
+My technical development focuses on using programming,
+data analysis and machine-learning approaches to investigate
+problems involving biological and scientific data.
 </p>
 
 <p>
-Alongside technical work, I am an academic writer and serve as
-Editor-in-Chief of the International Journal of Bioinformatics and
-Artificial Intelligence (IJBAI).
+I am also an academic writer and serve as Editor-in-Chief of
+the International Journal of Bioinformatics and Artificial
+Intelligence (IJBAI).
 </p>
 
 <p>
-This portfolio brings together my projects, research interests,
-academic work, publishing activities and professional development.
+Through my academic and technical work, I aim to develop
+research that is both scientifically meaningful and
+computationally practical.
 </p>
 
 </div>
 
 
-<div class="about-highlights">
+<div class="highlights">
+
 
 <div class="highlight">
-<strong>Bioinformatics</strong>
-<span>Computational biology & biological data</span>
+
+<strong>
+Bioinformatics
+</strong>
+
+<span>
+Computational biology and biological data analysis.
+</span>
+
 </div>
+
 
 <div class="highlight">
-<strong>Machine Learning</strong>
-<span>Learning and building practical ML systems</span>
+
+<strong>
+Machine Learning
+</strong>
+
+<span>
+Applied machine-learning projects and experimentation.
+</span>
+
 </div>
+
 
 <div class="highlight">
-<strong>Artificial Intelligence</strong>
-<span>AI applications and data-driven thinking</span>
+
+<strong>
+Artificial Intelligence
+</strong>
+
+<span>
+AI concepts, applications and data-driven problem solving.
+</span>
+
 </div>
+
 
 <div class="highlight">
-<strong>Academic Writing</strong>
-<span>Research, manuscripts & scholarly communication</span>
+
+<strong>
+Academic Writing
+</strong>
+
+<span>
+Research writing, scholarly communication and editorial work.
+</span>
+
 </div>
+
 
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= PROJECTS ================= -->
 
-<section id="projects">
+<!-- ========================================================
+     PROJECTS
+========================================================= -->
+
+<section
+class="content-section"
+id="projects">
 
 <div class="container">
 
+
 <div class="section-heading">
-<div class="kicker">Selected Work</div>
-<h2>Projects that show what I build.</h2>
+
+<div class="kicker">
+Projects
+</div>
+
+<h2>
+Selected technical work.
+</h2>
+
 <p>
-A selection of technical projects and machine-learning work.
-Each project links directly to its GitHub repository.
+Explore my programming, machine-learning and bioinformatics
+projects through GitHub.
 </p>
+
 </div>
 
 
@@ -1054,20 +1865,29 @@ Each project links directly to its GitHub repository.
 
 <div class="project-card">
 
-<div class="project-number">01 / MACHINE LEARNING</div>
+<div class="project-number">
+01 / MACHINE LEARNING
+</div>
 
-<h3>FlyRank ML Capstone</h3>
+<h3>
+FlyRank ML Capstone
+</h3>
 
 <p>
-Machine learning capstone focused on Google Search ranking,
+Machine-learning capstone focused on Google Search ranking,
 discoverability and data-driven content opportunity analysis.
 </p>
 
 <div class="tags">
+
 <span class="tag">Python</span>
+
 <span class="tag">Machine Learning</span>
+
 <span class="tag">Data Analysis</span>
+
 <span class="tag">Google Search</span>
+
 </div>
 
 <a
@@ -1075,28 +1895,40 @@ href="https://github.com/Gulzaibsharif-coder/flyrank-ml-capstone"
 target="_blank"
 rel="noopener noreferrer"
 class="project-link">
-View on GitHub →
+
+Open GitHub Project →
+
 </a>
 
 </div>
 
 
+
 <div class="project-card">
 
-<div class="project-number">02 / BIOINFORMATICS</div>
+<div class="project-number">
+02 / BIOINFORMATICS
+</div>
 
-<h3>Nucleotide Counter & Sequence Analyzer</h3>
+<h3>
+Nucleotide Counter & Sequence Analyzer
+</h3>
 
 <p>
-A bioinformatics project designed to analyse nucleotide sequences
-and provide computational sequence information.
+A computational bioinformatics project for analysing
+DNA nucleotide sequences.
 </p>
 
 <div class="tags">
+
 <span class="tag">Python</span>
-<span class="tag">Bioinformatics</span>
+
 <span class="tag">DNA</span>
+
+<span class="tag">Bioinformatics</span>
+
 <span class="tag">Sequence Analysis</span>
+
 </div>
 
 <a
@@ -1104,28 +1936,40 @@ href="https://github.com/Gulzaibsharif-coder/Nucleotide-Counter-in-a-sequence-DN
 target="_blank"
 rel="noopener noreferrer"
 class="project-link">
-View on GitHub →
+
+Open GitHub Project →
+
 </a>
 
 </div>
 
 
+
 <div class="project-card">
 
-<div class="project-number">03 / BIOINFORMATICS</div>
+<div class="project-number">
+03 / BIOINFORMATICS
+</div>
 
-<h3>DNA Mutation Detector</h3>
+<h3>
+DNA Mutation Detector
+</h3>
 
 <p>
-A computational project exploring DNA sequence changes and mutation
-detection through programming-based analysis.
+A programming project exploring DNA sequence changes
+and mutation detection.
 </p>
 
 <div class="tags">
+
 <span class="tag">Python</span>
+
 <span class="tag">DNA</span>
+
 <span class="tag">Mutation</span>
+
 <span class="tag">Bioinformatics</span>
+
 </div>
 
 <a
@@ -1133,98 +1977,176 @@ href="https://github.com/Gulzaibsharif-coder/DNA-Mutation-Detector"
 target="_blank"
 rel="noopener noreferrer"
 class="project-link">
-View on GitHub →
+
+Open GitHub Project →
+
 </a>
 
 </div>
 
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= RESEARCH ================= -->
 
-<section id="research">
+<!-- ========================================================
+     RESEARCH
+========================================================= -->
+
+<section
+class="content-section"
+id="research">
 
 <div class="container">
 
+
 <div class="section-heading">
-<div class="kicker">Research</div>
-<h2>Academic writing and interdisciplinary research.</h2>
+
+<div class="kicker">
+Research
+</div>
+
+<h2>
+Academic writing and interdisciplinary research.
+</h2>
+
 <p>
-My research interests connect computational methods with biological,
-technological and academic questions.
+Exploring research questions through computational,
+scientific and academic approaches.
 </p>
+
 </div>
 
 
 <div class="research-grid">
 
+
 <div class="research-card">
 
-<h3>Research Interests</h3>
+<h3>
+Research Interests
+</h3>
 
 <p>
-Areas I am currently exploring and developing expertise in:
+Areas of academic and technical interest include:
 </p>
 
 <ul>
-<li>Artificial Intelligence</li>
-<li>Machine Learning</li>
-<li>Bioinformatics</li>
-<li>Computational Biology</li>
-<li>Data Science</li>
-<li>Genomics and biological data</li>
-<li>AI-assisted research</li>
+
+<li>
+Artificial Intelligence
+</li>
+
+<li>
+Machine Learning
+</li>
+
+<li>
+Bioinformatics
+</li>
+
+<li>
+Computational Biology
+</li>
+
+<li>
+Data Science
+</li>
+
+<li>
+Genomics and biological data
+</li>
+
+<li>
+AI-assisted research
+</li>
+
 </ul>
 
 </div>
 
 
+
 <div class="research-card">
 
-<h3>Academic Writing</h3>
+<h3>
+Academic Writing
+</h3>
 
 <p>
-Alongside technical projects, I work on academic writing and scholarly
-communication, including research manuscripts, literature-based
-analysis and publication development.
+I also work on academic writing and scholarly communication,
+including:
 </p>
 
 <ul>
-<li>Research article development</li>
-<li>Academic manuscript writing</li>
-<li>Literature review</li>
-<li>Scientific communication</li>
-<li>Editorial work</li>
+
+<li>
+Research article development
+</li>
+
+<li>
+Literature review
+</li>
+
+<li>
+Academic manuscript writing
+</li>
+
+<li>
+Scientific communication
+</li>
+
+<li>
+Editorial work
+</li>
+
+<li>
+Research publication
+</li>
+
 </ul>
 
 </div>
 
+
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= IJBAI ================= -->
 
-<section class="journal" id="ijbai">
+<!-- ========================================================
+     IJBAI
+========================================================= -->
+
+<section
+class="content-section journal-section"
+id="ijbai">
 
 <div class="container">
 
+
 <div class="section-heading">
-<div class="kicker">Academic Publishing</div>
+
+<div class="kicker">
+Academic Publishing
+</div>
 
 <h2>
 International Journal of Bioinformatics and Artificial Intelligence
 </h2>
 
 <p>
-IJBAI — Research at the intersection of Bioinformatics, Artificial
-Intelligence and computational science.
+IJBAI — an academic publishing platform at the intersection
+of artificial intelligence, bioinformatics and computational science.
 </p>
+
 </div>
 
 
@@ -1233,69 +2155,172 @@ Intelligence and computational science.
 
 <div class="journal-main">
 
-<p>
-I serve as the Editor-in-Chief of the
-<strong>International Journal of Bioinformatics and Artificial Intelligence
-(IJBAI)</strong>.
-</p>
+
+<div class="journal-header">
+
+<div class="journal-badge">
+IJBAI
+</div>
+
+<strong>
+Editor-in-Chief
+</strong>
+
+</div>
+
 
 <p>
-IJBAI is an international peer-reviewed, open-access journal dedicated
-to research at the intersection of Artificial Intelligence,
-Bioinformatics, Computational Biology, Biotechnology, Biomedical
-Engineering, Machine Learning, Genomics, Precision Medicine, Data
-Science and related interdisciplinary fields.
+
+I am privileged to serve as the
+<strong>
+Editor-in-Chief of the International Journal of
+Bioinformatics and Artificial Intelligence (IJBAI).
+</strong>
+
 </p>
 
-<h3 style="margin-top:30px;">
-We welcome submissions in:
+
+<p>
+
+IJBAI is an international peer-reviewed,
+open-access journal dedicated to advancing research
+at the intersection of Artificial Intelligence,
+Bioinformatics, Computational Biology,
+Biotechnology, Biomedical Engineering,
+Machine Learning, Genomics, Precision Medicine,
+Data Science and related interdisciplinary fields.
+
+</p>
+
+
+<h3>
+We Welcome Submissions
 </h3>
 
 
 <div class="journal-types">
 
-<div class="journal-type">Original Research Articles</div>
-<div class="journal-type">Review Articles</div>
-<div class="journal-type">Short Communications</div>
-<div class="journal-type">Case Studies</div>
-<div class="journal-type">Technical Notes</div>
-<div class="journal-type">Interdisciplinary Research</div>
+
+<div class="journal-type">
+Original Research Articles
+</div>
+
+<div class="journal-type">
+Review Articles
+</div>
+
+<div class="journal-type">
+Short Communications
+</div>
+
+<div class="journal-type">
+Case Studies
+</div>
+
+<div class="journal-type">
+Technical Notes
+</div>
+
+<div class="journal-type">
+Interdisciplinary Research
+</div>
+
 
 </div>
 
 
-<p>
-Researchers, PhD scholars, Master's students, undergraduate researchers
-and academic groups are welcome to explore publication opportunities
-with IJBAI.
-</p>
+<h3>
+Why Submit to IJBAI?
+</h3>
+
 
 <p>
-Our editorial team aims to provide professional editorial guidance,
-fair and transparent peer review, manuscript-formatting assistance,
-submission support and communication throughout the publication process.
+
+Our editorial team aims to support researchers throughout
+the publication process through professional editorial
+guidance, manuscript-formatting assistance, peer review,
+submission support and communication during revision.
+
+</p>
+
+
+<p>
+
+Researchers, PhD scholars, Master's students,
+undergraduate researchers and academic groups are
+welcome to explore publication opportunities.
+
+</p>
+
+
+<h3>
+Research Areas
+</h3>
+
+
+<p>
+
+Artificial Intelligence • Machine Learning • Bioinformatics •
+Computational Biology • Biotechnology • Biomedical Engineering •
+Genomics • Precision Medicine • Data Science
+
 </p>
 
 </div>
 
 
-<div class="journal-side">
 
-<h3>Publish With Us</h3>
+<!-- PUBLISH CARD -->
+
+<div class="publish-card">
+
+<h3>
+Publish With Us
+</h3>
+
 
 <p>
-Have research in AI, bioinformatics, machine learning, computational
-biology or related fields?
-Explore IJBAI and consider submitting your work.
+
+Have research related to AI, bioinformatics,
+machine learning, computational biology or
+another related interdisciplinary field?
+
 </p>
+
+
+<ul>
+
+<li>
+Submit your research article
+</li>
+
+<li>
+Submit a review article
+</li>
+
+<li>
+Share your work with your research group
+</li>
+
+<li>
+Encourage student research submissions
+</li>
+
+<li>
+Explore published research
+</li>
+
+</ul>
 
 
 <a
 href="https://journal.irip.ac.pk/index.php/ijbai/"
 target="_blank"
 rel="noopener noreferrer"
-class="btn journal-btn">
+class="publish-btn">
+
 Visit IJBAI Journal →
+
 </a>
 
 
@@ -1303,32 +2328,56 @@ Visit IJBAI Journal →
 href="https://journal.irip.ac.pk/index.php/ijbai/"
 target="_blank"
 rel="noopener noreferrer"
-class="btn btn-outline"
-style="width:100%;">
-Explore Published Research →
+class="publish-btn secondary">
+
+View Published Research →
+
 </a>
 
 
-<p class="journal-note">
-Publisher: International Research Institute Pakistan (IRIP)
+<p style="
+font-size:13px;
+margin-top:20px;
+color:#b8d0e0;
+">
+
+Publisher:
+International Research Institute Pakistan (IRIP)
+
 </p>
 
 </div>
 
+
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
 
-<section id="experience">
+<!-- ========================================================
+     EXPERIENCE
+========================================================= -->
+
+<section
+class="content-section"
+id="experience">
 
 <div class="container">
 
+
 <div class="section-heading">
-<div class="kicker">Experience</div>
-<h2>Learning through research, projects and professional work.</h2>
+
+<div class="kicker">
+Experience
+</div>
+
+<h2>
+Academic, editorial and technical development.
+</h2>
+
 </div>
 
 
@@ -1337,72 +2386,102 @@ Publisher: International Research Institute Pakistan (IRIP)
 
 <div class="timeline-item">
 
-<h3>Editor-in-Chief — IJBAI</h3>
+<h3>
+Editor-in-Chief — IJBAI
+</h3>
 
-<div class="date">
+<div class="timeline-date">
 International Journal of Bioinformatics and Artificial Intelligence
 </div>
 
 <p>
-Leading academic publishing activities, supporting scholarly
-communication and working with research submissions in bioinformatics,
-artificial intelligence, machine learning and related fields.
+
+Leading academic publishing activities and supporting
+research communication in bioinformatics, artificial
+intelligence, machine learning and related interdisciplinary fields.
+
 </p>
 
 </div>
 
 
+
 <div class="timeline-item">
 
-<h3>Machine Learning Intern</h3>
+<h3>
+Machine Learning Intern
+</h3>
 
-<div class="date">
+<div class="timeline-date">
 FlyRank
 </div>
 
 <p>
-Developing practical machine-learning skills through structured
-projects involving data analysis, research framing, modeling and
-Google Search ranking/discoverability problems.
+
+Developing practical machine-learning skills through
+projects involving data analysis, research framing,
+model development and Google Search discoverability.
+
 </p>
 
 </div>
+
 
 
 <div class="timeline-item">
 
-<h3>Academic Writer & Researcher</h3>
+<h3>
+Academic Writer & Researcher
+</h3>
 
-<div class="date">
-Academic & Research Work
+<div class="timeline-date">
+Academic Research
 </div>
 
 <p>
-Working on academic writing, research development, literature
-analysis and scholarly communication.
+
+Working on academic writing, literature analysis,
+research development and scholarly communication.
+
 </p>
 
 </div>
 
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= EDUCATION ================= -->
 
-<section id="education">
+<!-- ========================================================
+     EDUCATION
+========================================================= -->
+
+<section
+class="content-section"
+id="education">
 
 <div class="container">
 
+
 <div class="section-heading">
-<div class="kicker">Education</div>
-<h2>Academic foundation.</h2>
+
+<div class="kicker">
+Education
+</div>
+
+<h2>
+Academic foundation.
+</h2>
+
 <p>
-My academic training provides the foundation for my work in
-bioinformatics, artificial intelligence and research.
+My academic training provides the foundation for my
+work in bioinformatics, artificial intelligence and research.
 </p>
+
 </div>
 
 
@@ -1411,201 +2490,336 @@ bioinformatics, artificial intelligence and research.
 
 <div class="edu-card">
 
-<h3>BS in Bioinformatics</h3>
+<h3>
+BS in Bioinformatics
+</h3>
 
-<div class="institution">
-Final Year
+<div class="edu-institution">
+Final Year Student
 </div>
 
 <p>
-Currently completing my undergraduate degree with a focus on
-bioinformatics and computational approaches to biological data.
+
+Currently completing my undergraduate degree
+with a focus on bioinformatics and computational
+approaches to biological data.
+
 </p>
 
 </div>
+
 
 
 <div class="edu-card">
 
-<h3>Professional Development</h3>
+<h3>
+Technical Development
+</h3>
 
-<div class="institution">
-AI • Machine Learning • Data Science
+<div class="edu-institution">
+AI • ML • Data Science
 </div>
 
 <p>
-Developing practical skills through machine-learning projects,
-technical assignments and applied computational work.
+
+Developing practical skills through machine-learning
+projects, programming assignments and applied
+computational research.
+
 </p>
 
 </div>
 
 
 </div>
+
 </div>
+
 </section>
 
 
-<!-- ================= CTA ================= -->
 
-<section class="cta">
+<!-- ========================================================
+     CONTACT / MESSAGE
+========================================================= -->
 
-<div class="container">
-
-<div class="cta-box">
-
-<h2>
-Let's build, research and learn.
-</h2>
-
-<p>
-Interested in my projects, research or academic publishing?
-Explore my work or connect with me.
-</p>
-
-<div class="hero-buttons" style="justify-content:center;">
-
-<a
-href="https://github.com/Gulzaibsharif-coder"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-primary">
-GitHub →
-</a>
-
-<a
-href="https://www.linkedin.com/in/gulzaibsharif/"
-target="_blank"
-rel="noopener noreferrer"
-class="btn btn-outline">
-LinkedIn →
-</a>
-
-<a
-href="mailto:gulzaibsharif786@gmail.com"
-class="btn btn-outline">
-Email Me →
-</a>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
+<section
+class="content-section"
+id="contact">
 
 <div class="container">
+
 
 <div class="section-heading">
 
-<div class="kicker">Contact</div>
+<div class="kicker">
+Contact
+</div>
 
-<h2>Let's connect.</h2>
+<h2>
+Let's connect and work together.
+</h2>
 
 <p>
-For research collaboration, academic communication, projects,
-publishing enquiries or professional opportunities.
+
+For research collaboration, academic communication,
+technical projects, publishing enquiries or professional opportunities.
+
 </p>
 
 </div>
 
 
-<div class="contact-grid">
+<div class="contact-layout">
 
 
-<div class="contact-card">
+<!-- CONTACT INFORMATION -->
 
-<h3>Email</h3>
+<div class="contact-info">
+
+<h3>
+Get in touch
+</h3>
 
 <p>
-For academic, research and professional communication.
+
+You can contact me directly or send a message using
+the form. I would be happy to hear about research,
+projects, collaboration or academic work.
+
 </p>
 
-<a
-href="mailto:gulzaibsharif786@gmail.com"
-class="contact-link">
+
+<div class="contact-item">
+
+<strong>
+Email
+</strong>
+
+<a href="mailto:gulzaibsharif786@gmail.com">
+
 gulzaibsharif786@gmail.com
+
 </a>
 
 </div>
 
 
-<div class="contact-card">
+<div class="contact-item">
 
-<h3>LinkedIn</h3>
-
-<p>
-Connect with me professionally and follow my academic and technical
-development.
-</p>
+<strong>
+LinkedIn
+</strong>
 
 <a
 href="https://www.linkedin.com/in/gulzaibsharif/"
 target="_blank"
-rel="noopener noreferrer"
-class="contact-link">
-linkedin.com/in/gulzaibsharif →
+rel="noopener noreferrer">
+
+linkedin.com/in/gulzaibsharif
+
 </a>
 
 </div>
 
 
-<div class="contact-card">
+<div class="contact-item">
 
-<h3>GitHub</h3>
-
-<p>
-Explore my code, machine-learning work and bioinformatics projects.
-</p>
+<strong>
+GitHub
+</strong>
 
 <a
 href="https://github.com/Gulzaibsharif-coder"
 target="_blank"
-rel="noopener noreferrer"
-class="contact-link">
-github.com/Gulzaibsharif-coder →
+rel="noopener noreferrer">
+
+github.com/Gulzaibsharif-coder
+
 </a>
 
 </div>
 
 
-<div class="contact-card">
+<div class="contact-item">
 
-<h3>IJBAI</h3>
-
-<p>
-For journal and publishing enquiries, visit the International Journal
-of Bioinformatics and Artificial Intelligence.
-</p>
+<strong>
+IJBAI
+</strong>
 
 <a
 href="https://journal.irip.ac.pk/index.php/ijbai/"
 target="_blank"
-rel="noopener noreferrer"
-class="contact-link">
-Visit IJBAI →
+rel="noopener noreferrer">
+
+Visit IJBAI Journal
+
 </a>
 
 </div>
 
 
 </div>
+
+
+
+<!-- MESSAGE FORM -->
+
+<div class="message-card">
+
+<h3>
+Send Me a Message
+</h3>
+
+<p>
+
+Have a question, suggestion, research idea,
+project proposal or collaboration opportunity?
+Write it below.
+
+</p>
+
+
+<form
+action="https://formsubmit.co/gulzaibsharif786@gmail.com"
+method="POST">
+
+
+<input
+type="hidden"
+name="_subject"
+value="New Portfolio Message - Gulzaib Sharif">
+
+
+<input
+type="hidden"
+name="_template"
+value="table">
+
+
+<input
+type="hidden"
+name="_captcha"
+value="true">
+
+
+<div class="form-group">
+
+<label>
+Your Name
+</label>
+
+<input
+type="text"
+name="name"
+placeholder="Enter your name"
+required>
+
 </div>
+
+
+<div class="form-group">
+
+<label>
+Your Email
+</label>
+
+<input
+type="email"
+name="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Subject
+</label>
+
+<select name="subject" required>
+
+<option value="">
+Select a subject
+</option>
+
+<option>
+Research Collaboration
+</option>
+
+<option>
+Academic Writing
+</option>
+
+<option>
+Machine Learning Project
+</option>
+
+<option>
+Bioinformatics
+</option>
+
+<option>
+IJBAI Publication
+</option>
+
+<option>
+General Enquiry
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Message
+</label>
+
+<textarea
+name="message"
+placeholder="Write your message, suggestion, research idea or project proposal..."
+required></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-btn">
+
+Send Message →
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
-<!-- ================= FOOTER ================= -->
 
-<footer>
+<!-- ========================================================
+     FOOTER
+========================================================= -->
+
+<footer id="footer">
 
 <div class="container footer-inner">
 
+
 <div>
+
 <div class="footer-logo">
 GULZAIB.
 </div>
@@ -1613,6 +2827,7 @@ GULZAIB.
 <div>
 AI • Machine Learning • Bioinformatics • Research
 </div>
+
 </div>
 
 
@@ -1637,9 +2852,143 @@ Email
 
 </div>
 
+
 </div>
 
 </footer>
+
+
+
+<!-- ========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+const buttons =
+document.querySelectorAll("[data-section]");
+
+const sections =
+document.querySelectorAll(".content-section");
+
+const footer =
+document.getElementById("footer");
+
+const navButtons =
+document.querySelectorAll(".nav-btn");
+
+
+/*
+    Open a specific section.
+*/
+
+function openSection(sectionId){
+
+    sections.forEach(section => {
+
+        section.classList.remove("visible");
+
+    });
+
+
+    const selected =
+        document.getElementById(sectionId);
+
+
+    if(selected){
+
+        selected.classList.add("visible");
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+
+    navButtons.forEach(button => {
+
+        button.classList.remove("active");
+
+        if(
+            button.dataset.section === sectionId
+        ){
+
+            button.classList.add("active");
+
+        }
+
+    });
+
+
+    footer.classList.add("visible");
+
+}
+
+
+/*
+    Every navigation / hero button
+    opens its requested section.
+*/
+
+buttons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            const section =
+                this.dataset.section;
+
+            openSection(section);
+
+        }
+    );
+
+});
+
+
+/*
+    Logo returns visitor to
+    the introductory page.
+*/
+
+document
+.querySelector(".logo")
+.addEventListener(
+    "click",
+    function(event){
+
+        event.preventDefault();
+
+
+        sections.forEach(section => {
+
+            section.classList.remove("visible");
+
+        });
+
+
+        navButtons.forEach(button => {
+
+            button.classList.remove("active");
+
+        });
+
+
+        footer.classList.remove("visible");
+
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+);
+
+</script>
 
 
 </body>
