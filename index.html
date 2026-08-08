@@ -13,23 +13,32 @@ content="Gulzaib Sharif — Bioinformatics student, Machine Learning practitione
 <style>
 
 /* =========================================================
-   GLOBAL
+   VARIABLES
 ========================================================= */
 
 :root{
     --navy:#10243a;
     --navy2:#173b5d;
     --blue:#1478c9;
-    --blue-light:#eaf5fd;
+    --blue2:#287ee0;
     --cyan:#20b8d4;
+
     --text:#24384b;
     --muted:#66798b;
+
     --border:#dce6ee;
-    --bg:#ffffff;
+
     --soft:#f6f9fc;
+
     --white:#ffffff;
+
     --shadow:0 20px 60px rgba(16,36,58,.10);
 }
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 *{
     margin:0;
@@ -49,14 +58,10 @@ body{
         sans-serif;
 
     background:#ffffff;
-    color:var(--text);
-    line-height:1.7;
-}
 
-button,
-input,
-textarea{
-    font-family:inherit;
+    color:var(--text);
+
+    line-height:1.7;
 }
 
 a{
@@ -64,8 +69,16 @@ a{
     color:inherit;
 }
 
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
 .container{
     width:min(1180px,92%);
+
     margin:auto;
 }
 
@@ -75,7 +88,9 @@ a{
 ========================================================= */
 
 nav{
+
     position:fixed;
+
     top:0;
     left:0;
     right:0;
@@ -84,7 +99,7 @@ nav{
 
     z-index:9999;
 
-    background:rgba(255,255,255,.96);
+    background:rgba(255,255,255,.97);
 
     backdrop-filter:blur(15px);
 
@@ -92,20 +107,27 @@ nav{
 }
 
 .nav-inner{
+
     height:100%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
 .logo{
+
     font-size:25px;
+
     font-weight:900;
 
     color:var(--navy);
 
     letter-spacing:-1px;
+
+    cursor:pointer;
 }
 
 .logo span{
@@ -113,18 +135,24 @@ nav{
 }
 
 .nav-links{
+
     display:flex;
+
     align-items:center;
-    gap:28px;
+
+    gap:25px;
 }
 
 .nav-btn{
+
     background:none;
+
     border:none;
 
     color:#43576a;
 
     font-size:15px;
+
     font-weight:700;
 
     cursor:pointer;
@@ -141,6 +169,7 @@ nav{
 }
 
 .nav-contact{
+
     border:1.5px solid var(--blue);
 
     padding:9px 20px;
@@ -151,24 +180,29 @@ nav{
 }
 
 .nav-contact:hover{
+
     background:var(--blue);
+
     color:white;
 }
 
 
 /* =========================================================
-   HERO
+   HOME / INTRODUCTION
 ========================================================= */
 
 .hero{
+
     min-height:100vh;
 
     padding-top:78px;
 
     display:flex;
+
     align-items:center;
 
     background:
+
         radial-gradient(
             circle at 85% 25%,
             rgba(20,120,201,.10),
@@ -184,21 +218,38 @@ nav{
     overflow:hidden;
 }
 
+/*
+IMPORTANT:
+The home page is visible initially.
+When another section opens, JavaScript adds .hidden.
+*/
+
+.hero.hidden{
+    display:none;
+}
+
 .hero-grid{
+
     display:grid;
 
     grid-template-columns:
         1.05fr
         .95fr;
 
-    gap:60px;
+    gap:50px;
 
     align-items:center;
 
     padding:70px 0;
 }
 
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
 .eyebrow{
+
     display:inline-flex;
 
     align-items:center;
@@ -221,6 +272,7 @@ nav{
 }
 
 .dot{
+
     width:9px;
     height:9px;
 
@@ -234,6 +286,7 @@ nav{
 }
 
 .hero h1{
+
     font-size:
         clamp(65px,8vw,110px);
 
@@ -247,7 +300,9 @@ nav{
 }
 
 .hero h1 span{
+
     background:
+
         linear-gradient(
             90deg,
             #1478c9,
@@ -260,6 +315,7 @@ nav{
 }
 
 .hero-lead{
+
     max-width:760px;
 
     font-size:22px;
@@ -274,6 +330,7 @@ nav{
 }
 
 .hero-description{
+
     max-width:700px;
 
     font-size:17px;
@@ -283,7 +340,13 @@ nav{
     margin-bottom:32px;
 }
 
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
 .hero-buttons{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -292,9 +355,11 @@ nav{
 }
 
 .btn{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:8px;
@@ -313,6 +378,7 @@ nav{
 }
 
 .btn-primary{
+
     background:var(--navy);
 
     border-color:var(--navy);
@@ -321,6 +387,7 @@ nav{
 }
 
 .btn-primary:hover{
+
     background:var(--blue);
 
     border-color:var(--blue);
@@ -329,12 +396,14 @@ nav{
 }
 
 .btn-outline{
+
     background:white;
 
     color:var(--navy);
 }
 
 .btn-outline:hover{
+
     border-color:var(--blue);
 
     color:var(--blue);
@@ -344,10 +413,11 @@ nav{
 
 
 /* =========================================================
-   HERO AI VISUAL
+   AI VISUAL
 ========================================================= */
 
 .ai-stage{
+
     height:500px;
 
     position:relative;
@@ -355,13 +425,16 @@ nav{
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 }
 
 .orbit{
+
     position:absolute;
 
-    border:1px solid
+    border:
+        1px solid
         rgba(20,120,201,.17);
 
     border-radius:50%;
@@ -374,12 +447,16 @@ nav{
 }
 
 .orbit.one{
+
     width:430px;
+
     height:430px;
 }
 
 .orbit.two{
+
     width:310px;
+
     height:310px;
 
     animation-duration:14s;
@@ -388,24 +465,30 @@ nav{
 }
 
 .orbit.three{
+
     width:190px;
+
     height:190px;
 
     animation-duration:9s;
 }
 
 .ai-core{
+
     width:165px;
+
     height:165px;
 
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     border-radius:50%;
 
     background:
+
         linear-gradient(
             145deg,
             #102c48,
@@ -419,6 +502,7 @@ nav{
     font-weight:900;
 
     box-shadow:
+
         0 0 0 18px
         rgba(20,120,201,.06),
 
@@ -429,6 +513,7 @@ nav{
 }
 
 .ai-label{
+
     position:absolute;
 
     padding:11px 16px;
@@ -453,32 +538,45 @@ nav{
 }
 
 .label-ml{
+
     top:30px;
+
     right:30px;
 }
 
 .label-data{
+
     top:165px;
+
     left:0;
+
     animation-delay:1s;
 }
 
 .label-bio{
+
     bottom:80px;
+
     left:45px;
+
     animation-delay:1.5s;
 }
 
 .label-research{
+
     bottom:40px;
+
     right:0;
+
     animation-delay:.5s;
 }
 
 .particle{
+
     position:absolute;
 
     width:12px;
+
     height:12px;
 
     background:var(--cyan);
@@ -496,21 +594,28 @@ nav{
 }
 
 .p1{
+
     top:70px;
+
     left:44%;
 }
 
 .p2{
+
     right:17%;
+
     top:45%;
 }
 
 .p3{
+
     left:21%;
+
     bottom:22%;
 }
 
 @keyframes orbitRotate{
+
     from{
         transform:rotate(0deg);
     }
@@ -521,6 +626,7 @@ nav{
 }
 
 @keyframes floating{
+
     0%,100%{
         transform:translateY(0);
     }
@@ -531,13 +637,16 @@ nav{
 }
 
 @keyframes pulse{
+
     0%,100%{
         transform:scale(1);
+
         opacity:.8;
     }
 
     50%{
         transform:scale(1.5);
+
         opacity:1;
     }
 }
@@ -548,12 +657,14 @@ nav{
 ========================================================= */
 
 /*
-   IMPORTANT:
-   All content sections are hidden initially.
-   JavaScript displays only the section the visitor clicks.
+VERY IMPORTANT:
+
+All content sections are completely hidden
+until the visitor clicks a navigation button.
 */
 
 .content-section{
+
     display:none;
 
     min-height:calc(100vh - 78px);
@@ -576,24 +687,36 @@ nav{
 }
 
 @keyframes sectionIn{
+
     from{
+
         opacity:0;
-        transform:translateY(12px);
+
+        transform:translateY(15px);
     }
 
     to{
+
         opacity:1;
+
         transform:translateY(0);
     }
 }
 
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
 .section-heading{
-    max-width:800px;
+
+    max-width:850px;
 
     margin-bottom:45px;
 }
 
 .kicker{
+
     color:var(--blue);
 
     font-size:14px;
@@ -608,6 +731,7 @@ nav{
 }
 
 .section-heading h2{
+
     font-size:
         clamp(38px,5vw,56px);
 
@@ -621,9 +745,53 @@ nav{
 }
 
 .section-heading p{
+
     color:var(--muted);
 
     font-size:18px;
+}
+
+
+/* =========================================================
+   HOME BUTTON
+========================================================= */
+
+.home-return{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:35px;
+
+    padding:10px 17px;
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    background:white;
+
+    color:var(--navy);
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.home-return:hover{
+
+    background:var(--navy);
+
+    border-color:var(--navy);
+
+    color:white;
+
+    transform:translateY(-2px);
 }
 
 
@@ -632,6 +800,7 @@ nav{
 ========================================================= */
 
 .about-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -642,6 +811,7 @@ nav{
 }
 
 .about-text p{
+
     color:#64788b;
 
     font-size:17px;
@@ -650,6 +820,7 @@ nav{
 }
 
 .highlights{
+
     display:grid;
 
     grid-template-columns:
@@ -660,6 +831,7 @@ nav{
 }
 
 .highlight{
+
     padding:25px;
 
     background:#ffffff;
@@ -674,6 +846,7 @@ nav{
 }
 
 .highlight strong{
+
     display:block;
 
     color:var(--navy);
@@ -684,6 +857,7 @@ nav{
 }
 
 .highlight span{
+
     color:var(--muted);
 
     font-size:14px;
@@ -695,6 +869,7 @@ nav{
 ========================================================= */
 
 .projects{
+
     display:grid;
 
     grid-template-columns:
@@ -704,6 +879,7 @@ nav{
 }
 
 .project-card{
+
     display:flex;
 
     flex-direction:column;
@@ -720,6 +896,7 @@ nav{
 }
 
 .project-card:hover{
+
     transform:translateY(-7px);
 
     border-color:#a9cee8;
@@ -728,6 +905,7 @@ nav{
 }
 
 .project-number{
+
     color:var(--blue);
 
     font-size:13px;
@@ -738,6 +916,7 @@ nav{
 }
 
 .project-card h3{
+
     color:var(--navy);
 
     font-size:23px;
@@ -746,6 +925,7 @@ nav{
 }
 
 .project-card p{
+
     color:var(--muted);
 
     flex-grow:1;
@@ -754,6 +934,7 @@ nav{
 }
 
 .tags{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -764,6 +945,7 @@ nav{
 }
 
 .tag{
+
     background:#eef7fd;
 
     color:#176da8;
@@ -778,6 +960,7 @@ nav{
 }
 
 .project-link{
+
     color:var(--blue);
 
     font-weight:850;
@@ -789,6 +972,7 @@ nav{
 ========================================================= */
 
 .research-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -799,6 +983,7 @@ nav{
 }
 
 .research-card{
+
     padding:30px;
 
     background:white;
@@ -809,6 +994,7 @@ nav{
 }
 
 .research-card h3{
+
     color:var(--navy);
 
     font-size:24px;
@@ -818,10 +1004,12 @@ nav{
 
 .research-card p,
 .research-card li{
+
     color:var(--muted);
 }
 
 .research-card ul{
+
     margin:
         15px
         0
@@ -830,6 +1018,7 @@ nav{
 }
 
 .research-card li{
+
     margin:7px 0;
 }
 
@@ -839,7 +1028,9 @@ nav{
 ========================================================= */
 
 .journal-section{
+
     background:
+
         linear-gradient(
             135deg,
             #ffffff,
@@ -848,6 +1039,7 @@ nav{
 }
 
 .journal-header{
+
     display:flex;
 
     align-items:center;
@@ -858,6 +1050,7 @@ nav{
 }
 
 .journal-badge{
+
     padding:8px 13px;
 
     border-radius:20px;
@@ -872,6 +1065,7 @@ nav{
 }
 
 .journal-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -884,6 +1078,7 @@ nav{
 }
 
 .journal-main{
+
     background:white;
 
     border:1px solid var(--border);
@@ -898,6 +1093,7 @@ nav{
 }
 
 .journal-main h3{
+
     color:var(--navy);
 
     font-size:25px;
@@ -909,6 +1105,7 @@ nav{
 }
 
 .journal-main p{
+
     color:#617589;
 
     font-size:17px;
@@ -917,6 +1114,7 @@ nav{
 }
 
 .journal-types{
+
     display:grid;
 
     grid-template-columns:
@@ -927,6 +1125,7 @@ nav{
 }
 
 .journal-type{
+
     padding:15px;
 
     background:#f5faff;
@@ -941,9 +1140,11 @@ nav{
 }
 
 .publish-card{
+
     padding:35px;
 
     background:
+
         linear-gradient(
             145deg,
             #10243a,
@@ -960,18 +1161,21 @@ nav{
 }
 
 .publish-card h3{
+
     font-size:32px;
 
     margin-bottom:15px;
 }
 
 .publish-card p{
+
     color:#d5e5f1;
 
     margin-bottom:20px;
 }
 
 .publish-card ul{
+
     margin:
         15px
         0
@@ -982,10 +1186,12 @@ nav{
 }
 
 .publish-card li{
+
     margin:7px 0;
 }
 
 .publish-btn{
+
     display:flex;
 
     align-items:center;
@@ -1010,12 +1216,14 @@ nav{
 }
 
 .publish-btn:hover{
+
     background:#dff2ff;
 
     transform:translateY(-2px);
 }
 
 .publish-btn.secondary{
+
     background:transparent;
 
     color:white;
@@ -1030,6 +1238,7 @@ nav{
 ========================================================= */
 
 .timeline{
+
     border-left:
         2px solid
         #cfe0ec;
@@ -1040,12 +1249,14 @@ nav{
 }
 
 .timeline-item{
+
     position:relative;
 
     margin-bottom:40px;
 }
 
 .timeline-item::before{
+
     content:"";
 
     position:absolute;
@@ -1055,6 +1266,7 @@ nav{
     top:8px;
 
     width:13px;
+
     height:13px;
 
     border-radius:50%;
@@ -1069,12 +1281,14 @@ nav{
 }
 
 .timeline-item h3{
+
     color:var(--navy);
 
     font-size:23px;
 }
 
 .timeline-date{
+
     color:var(--blue);
 
     font-weight:800;
@@ -1086,6 +1300,7 @@ nav{
 }
 
 .timeline-item p{
+
     color:var(--muted);
 }
 
@@ -1095,6 +1310,7 @@ nav{
 ========================================================= */
 
 .education-grid{
+
     display:grid;
 
     grid-template-columns:
@@ -1104,6 +1320,7 @@ nav{
 }
 
 .edu-card{
+
     padding:28px;
 
     background:white;
@@ -1116,6 +1333,7 @@ nav{
 }
 
 .edu-card h3{
+
     color:var(--navy);
 
     font-size:23px;
@@ -1124,12 +1342,14 @@ nav{
 }
 
 .edu-institution{
+
     color:var(--blue);
 
     font-weight:800;
 }
 
 .edu-card p{
+
     color:var(--muted);
 
     margin-top:10px;
@@ -1137,10 +1357,11 @@ nav{
 
 
 /* =========================================================
-   CONTACT / MESSAGE
+   CONTACT
 ========================================================= */
 
 .contact-layout{
+
     display:grid;
 
     grid-template-columns:
@@ -1151,9 +1372,11 @@ nav{
 }
 
 .contact-info{
+
     padding:32px;
 
     background:
+
         linear-gradient(
             145deg,
             #10243a,
@@ -1166,18 +1389,21 @@ nav{
 }
 
 .contact-info h3{
+
     font-size:28px;
 
     margin-bottom:15px;
 }
 
 .contact-info p{
+
     color:#d0e0eb;
 
     margin-bottom:25px;
 }
 
 .contact-item{
+
     padding:
         15px
         0;
@@ -1188,6 +1414,7 @@ nav{
 }
 
 .contact-item strong{
+
     display:block;
 
     color:white;
@@ -1196,12 +1423,14 @@ nav{
 }
 
 .contact-item a{
+
     color:#9ddaff;
 
     word-break:break-word;
 }
 
 .message-card{
+
     padding:32px;
 
     background:white;
@@ -1216,6 +1445,7 @@ nav{
 }
 
 .message-card h3{
+
     color:var(--navy);
 
     font-size:28px;
@@ -1224,16 +1454,19 @@ nav{
 }
 
 .message-card > p{
+
     color:var(--muted);
 
     margin-bottom:25px;
 }
 
 .form-group{
+
     margin-bottom:18px;
 }
 
 .form-group label{
+
     display:block;
 
     color:var(--navy);
@@ -1246,6 +1479,7 @@ nav{
 .form-group input,
 .form-group textarea,
 .form-group select{
+
     width:100%;
 
     padding:13px 14px;
@@ -1270,6 +1504,7 @@ nav{
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus{
+
     border-color:var(--blue);
 
     box-shadow:
@@ -1278,12 +1513,14 @@ nav{
 }
 
 .form-group textarea{
+
     min-height:145px;
 
     resize:vertical;
 }
 
 .submit-btn{
+
     width:100%;
 
     padding:14px;
@@ -1306,6 +1543,7 @@ nav{
 }
 
 .submit-btn:hover{
+
     background:var(--blue);
 }
 
@@ -1315,6 +1553,7 @@ nav{
 ========================================================= */
 
 footer{
+
     display:none;
 
     background:var(--navy);
@@ -1329,6 +1568,7 @@ footer.visible{
 }
 
 .footer-inner{
+
     display:flex;
 
     justify-content:space-between;
@@ -1339,6 +1579,7 @@ footer.visible{
 }
 
 .footer-logo{
+
     color:white;
 
     font-size:20px;
@@ -1347,6 +1588,7 @@ footer.visible{
 }
 
 .footer-links{
+
     display:flex;
 
     gap:20px;
@@ -1376,20 +1618,24 @@ footer.visible{
     .journal-grid,
     .research-grid,
     .contact-layout{
+
         grid-template-columns:1fr;
     }
 
     .projects{
+
         grid-template-columns:
             1fr
             1fr;
     }
 
     .education-grid{
+
         grid-template-columns:1fr;
     }
 
     .ai-stage{
+
         height:400px;
     }
 }
@@ -1397,12 +1643,14 @@ footer.visible{
 @media(max-width:700px){
 
     nav{
+
         height:auto;
 
         position:relative;
     }
 
     .nav-inner{
+
         min-height:75px;
 
         flex-direction:column;
@@ -1413,6 +1661,7 @@ footer.visible{
     }
 
     .nav-links{
+
         width:100%;
 
         overflow-x:auto;
@@ -1423,24 +1672,29 @@ footer.visible{
     }
 
     .hero{
+
         padding-top:0;
     }
 
     .hero-grid{
+
         padding:60px 0;
     }
 
     .hero h1{
+
         font-size:60px;
 
         letter-spacing:-3px;
     }
 
     .hero-lead{
+
         font-size:19px;
     }
 
     .ai-stage{
+
         transform:scale(.8);
 
         margin:
@@ -1449,18 +1703,22 @@ footer.visible{
     }
 
     .projects{
+
         grid-template-columns:1fr;
     }
 
     .highlights{
+
         grid-template-columns:1fr;
     }
 
     .journal-types{
+
         grid-template-columns:1fr;
     }
 
     .footer-inner{
+
         flex-direction:column;
 
         text-align:center;
@@ -1468,67 +1726,110 @@ footer.visible{
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ========================================================
+<!-- =====================================================
      NAVIGATION
-========================================================= -->
+====================================================== -->
 
 <nav>
 
 <div class="container nav-inner">
 
-<a href="#" class="logo">
+
+<!-- LOGO / HOME -->
+
+<a
+href="#"
+class="logo"
+id="homeLogo">
+
 GULZAIB<span>.</span>
+
 </a>
 
+
 <div class="nav-links">
+
+
+<!-- HOME BUTTON -->
+
+<button
+class="nav-btn"
+id="homeButton">
+
+Home
+
+</button>
+
 
 <button
 class="nav-btn"
 data-section="about">
+
 About
+
 </button>
+
 
 <button
 class="nav-btn"
 data-section="projects">
+
 Projects
+
 </button>
+
 
 <button
 class="nav-btn"
 data-section="research">
+
 Research
+
 </button>
+
 
 <button
 class="nav-btn"
 data-section="ijbai">
+
 IJBAI
+
 </button>
+
 
 <button
 class="nav-btn"
 data-section="experience">
+
 Experience
+
 </button>
+
 
 <button
 class="nav-btn"
 data-section="education">
+
 Education
+
 </button>
+
 
 <button
 class="nav-btn nav-contact"
 data-section="contact">
+
 Contact
+
 </button>
+
 
 </div>
 
@@ -1538,18 +1839,20 @@ Contact
 
 
 
-<!-- ========================================================
-     INTRODUCTION / HERO
-========================================================= -->
+<!-- =====================================================
+     HOME / INTRODUCTION
+====================================================== -->
 
 <section
 class="hero"
 id="home">
 
+
 <div class="container hero-grid">
 
 
 <div>
+
 
 <div class="eyebrow">
 
@@ -1588,16 +1891,19 @@ and academic research.
 
 <p class="hero-description">
 
-Bioinformatics student, machine learning learner,
-academic writer and Editor-in-Chief of the
-International Journal of Bioinformatics and
-Artificial Intelligence (IJBAI).
+Final-year BS Bioinformatics student,
+machine learning learner, academic writer
+and Editor-in-Chief of the
+International Journal of Bioinformatics
+and Artificial Intelligence (IJBAI).
 
 </p>
 
 
 <div class="hero-buttons">
 
+
+<!-- PROJECTS -->
 
 <button
 class="btn btn-primary"
@@ -1608,6 +1914,8 @@ Explore My Projects →
 </button>
 
 
+<!-- CV -->
+
 <a
 href="Gulzaib_Sharif_CV.pdf"
 target="_blank"
@@ -1617,6 +1925,8 @@ Download CV
 
 </a>
 
+
+<!-- GITHUB -->
 
 <a
 href="https://github.com/Gulzaibsharif-coder"
@@ -1629,6 +1939,8 @@ GitHub ↗
 </a>
 
 
+<!-- LINKEDIN -->
+
 <a
 href="https://www.linkedin.com/in/gulzaibsharif/"
 target="_blank"
@@ -1639,6 +1951,8 @@ LinkedIn ↗
 
 </a>
 
+
+<!-- PUBLISH WITH US -->
 
 <button
 class="btn btn-outline"
@@ -1658,6 +1972,7 @@ Publish With Us
 <!-- AI VISUAL -->
 
 <div class="ai-stage">
+
 
 <div class="orbit one"></div>
 
@@ -1697,6 +2012,7 @@ Research
 
 <div class="particle p3"></div>
 
+
 </div>
 
 </div>
@@ -1705,15 +2021,24 @@ Research
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      ABOUT
-========================================================= -->
+====================================================== -->
 
 <section
 class="content-section"
 id="about">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -1727,8 +2052,9 @@ Where computational thinking meets biological research.
 </h2>
 
 <p>
-A final-year bioinformatics student developing practical
-skills in AI, machine learning, data analysis and academic research.
+A final-year bioinformatics student developing
+practical skills in AI, machine learning,
+data analysis and academic research.
 </p>
 
 </div>
@@ -1740,27 +2066,29 @@ skills in AI, machine learning, data analysis and academic research.
 <div class="about-text">
 
 <p>
-I am a final-year BS Bioinformatics student interested in the
-intersection of biological sciences, artificial intelligence,
-machine learning and computational research.
+I am a final-year BS Bioinformatics student
+interested in the intersection of biological
+sciences, artificial intelligence, machine
+learning and computational research.
 </p>
 
 <p>
-My technical development focuses on using programming,
-data analysis and machine-learning approaches to investigate
-problems involving biological and scientific data.
+My technical development focuses on programming,
+data analysis and machine-learning approaches
+for scientific and biological problems.
 </p>
 
 <p>
-I am also an academic writer and serve as Editor-in-Chief of
-the International Journal of Bioinformatics and Artificial
-Intelligence (IJBAI).
+I am also an academic writer and serve as
+Editor-in-Chief of the International Journal
+of Bioinformatics and Artificial Intelligence
+(IJBAI).
 </p>
 
 <p>
-Through my academic and technical work, I aim to develop
-research that is both scientifically meaningful and
-computationally practical.
+My goal is to develop research and technical
+projects that are scientifically meaningful,
+practical and reproducible.
 </p>
 
 </div>
@@ -1802,7 +2130,7 @@ Artificial Intelligence
 </strong>
 
 <span>
-AI concepts, applications and data-driven problem solving.
+AI concepts and data-driven problem solving.
 </span>
 
 </div>
@@ -1815,7 +2143,7 @@ Academic Writing
 </strong>
 
 <span>
-Research writing, scholarly communication and editorial work.
+Research writing and scholarly communication.
 </span>
 
 </div>
@@ -1831,15 +2159,24 @@ Research writing, scholarly communication and editorial work.
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      PROJECTS
-========================================================= -->
+====================================================== -->
 
 <section
 class="content-section"
 id="projects">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -1853,8 +2190,8 @@ Selected technical work.
 </h2>
 
 <p>
-Explore my programming, machine-learning and bioinformatics
-projects through GitHub.
+Explore my programming, machine-learning
+and bioinformatics projects on GitHub.
 </p>
 
 </div>
@@ -1874,8 +2211,9 @@ FlyRank ML Capstone
 </h3>
 
 <p>
-Machine-learning capstone focused on Google Search ranking,
-discoverability and data-driven content opportunity analysis.
+Machine-learning capstone focused on Google
+Search ranking, discoverability and
+data-driven content opportunity analysis.
 </p>
 
 <div class="tags">
@@ -1915,8 +2253,8 @@ Nucleotide Counter & Sequence Analyzer
 </h3>
 
 <p>
-A computational bioinformatics project for analysing
-DNA nucleotide sequences.
+A computational bioinformatics project
+for analysing DNA nucleotide sequences.
 </p>
 
 <div class="tags">
@@ -1956,8 +2294,8 @@ DNA Mutation Detector
 </h3>
 
 <p>
-A programming project exploring DNA sequence changes
-and mutation detection.
+A programming project exploring DNA
+sequence changes and mutation detection.
 </p>
 
 <div class="tags">
@@ -1993,15 +2331,24 @@ Open GitHub Project →
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      RESEARCH
-========================================================= -->
+====================================================== -->
 
 <section
 class="content-section"
 id="research">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -2015,8 +2362,8 @@ Academic writing and interdisciplinary research.
 </h2>
 
 <p>
-Exploring research questions through computational,
-scientific and academic approaches.
+Research interests spanning computational science,
+AI, bioinformatics and scholarly communication.
 </p>
 
 </div>
@@ -2031,44 +2378,25 @@ scientific and academic approaches.
 Research Interests
 </h3>
 
-<p>
-Areas of academic and technical interest include:
-</p>
-
 <ul>
 
-<li>
-Artificial Intelligence
-</li>
+<li>Artificial Intelligence</li>
 
-<li>
-Machine Learning
-</li>
+<li>Machine Learning</li>
 
-<li>
-Bioinformatics
-</li>
+<li>Bioinformatics</li>
 
-<li>
-Computational Biology
-</li>
+<li>Computational Biology</li>
 
-<li>
-Data Science
-</li>
+<li>Data Science</li>
 
-<li>
-Genomics and biological data
-</li>
+<li>Genomics and biological data</li>
 
-<li>
-AI-assisted research
-</li>
+<li>AI-assisted research</li>
 
 </ul>
 
 </div>
-
 
 
 <div class="research-card">
@@ -2077,36 +2405,19 @@ AI-assisted research
 Academic Writing
 </h3>
 
-<p>
-I also work on academic writing and scholarly communication,
-including:
-</p>
-
 <ul>
 
-<li>
-Research article development
-</li>
+<li>Research article development</li>
 
-<li>
-Literature review
-</li>
+<li>Literature review</li>
 
-<li>
-Academic manuscript writing
-</li>
+<li>Academic manuscript writing</li>
 
-<li>
-Scientific communication
-</li>
+<li>Scientific communication</li>
 
-<li>
-Editorial work
-</li>
+<li>Editorial work</li>
 
-<li>
-Research publication
-</li>
+<li>Research publication</li>
 
 </ul>
 
@@ -2121,15 +2432,24 @@ Research publication
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      IJBAI
-========================================================= -->
+====================================================== -->
 
 <section
 class="content-section journal-section"
 id="ijbai">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -2143,8 +2463,9 @@ International Journal of Bioinformatics and Artificial Intelligence
 </h2>
 
 <p>
-IJBAI — an academic publishing platform at the intersection
-of artificial intelligence, bioinformatics and computational science.
+IJBAI — research at the intersection of
+Bioinformatics, Artificial Intelligence
+and computational science.
 </p>
 
 </div>
@@ -2152,6 +2473,8 @@ of artificial intelligence, bioinformatics and computational science.
 
 <div class="journal-grid">
 
+
+<!-- JOURNAL INFORMATION -->
 
 <div class="journal-main">
 
@@ -2173,8 +2496,9 @@ Editor-in-Chief
 
 I am privileged to serve as the
 <strong>
-Editor-in-Chief of the International Journal of
-Bioinformatics and Artificial Intelligence (IJBAI).
+Editor-in-Chief of the International Journal
+of Bioinformatics and Artificial Intelligence
+(IJBAI).
 </strong>
 
 </p>
@@ -2183,10 +2507,10 @@ Bioinformatics and Artificial Intelligence (IJBAI).
 <p>
 
 IJBAI is an international peer-reviewed,
-open-access journal dedicated to advancing research
-at the intersection of Artificial Intelligence,
-Bioinformatics, Computational Biology,
-Biotechnology, Biomedical Engineering,
+open-access journal dedicated to advancing
+research at the intersection of Artificial
+Intelligence, Bioinformatics, Computational
+Biology, Biotechnology, Biomedical Engineering,
 Machine Learning, Genomics, Precision Medicine,
 Data Science and related interdisciplinary fields.
 
@@ -2199,7 +2523,6 @@ We Welcome Submissions
 
 
 <div class="journal-types">
-
 
 <div class="journal-type">
 Original Research Articles
@@ -2225,30 +2548,29 @@ Technical Notes
 Interdisciplinary Research
 </div>
 
-
 </div>
 
 
 <h3>
-Why Submit to IJBAI?
+Why Publish With IJBAI?
 </h3>
 
 
 <p>
 
-Our editorial team aims to support researchers throughout
-the publication process through professional editorial
-guidance, manuscript-formatting assistance, peer review,
-submission support and communication during revision.
+Researchers can submit original research,
+reviews, short communications, case studies
+and technical notes within the journal's
+scope.
 
 </p>
 
 
 <p>
 
-Researchers, PhD scholars, Master's students,
-undergraduate researchers and academic groups are
-welcome to explore publication opportunities.
+The editorial team aims to support authors
+through manuscript preparation, formatting,
+submission, peer review and revision.
 
 </p>
 
@@ -2260,8 +2582,9 @@ Research Areas
 
 <p>
 
-Artificial Intelligence • Machine Learning • Bioinformatics •
-Computational Biology • Biotechnology • Biomedical Engineering •
+Artificial Intelligence • Machine Learning •
+Bioinformatics • Computational Biology •
+Biotechnology • Biomedical Engineering •
 Genomics • Precision Medicine • Data Science
 
 </p>
@@ -2270,7 +2593,7 @@ Genomics • Precision Medicine • Data Science
 
 
 
-<!-- PUBLISH CARD -->
+<!-- PUBLISH WITH US -->
 
 <div class="publish-card">
 
@@ -2281,9 +2604,9 @@ Publish With Us
 
 <p>
 
-Have research related to AI, bioinformatics,
-machine learning, computational biology or
-another related interdisciplinary field?
+Have research in AI, bioinformatics,
+machine learning, computational biology
+or related interdisciplinary fields?
 
 </p>
 
@@ -2291,7 +2614,7 @@ another related interdisciplinary field?
 <ul>
 
 <li>
-Submit your research article
+Submit your own research article
 </li>
 
 <li>
@@ -2299,11 +2622,15 @@ Submit a review article
 </li>
 
 <li>
-Share your work with your research group
+Encourage your PhD students to publish
 </li>
 
 <li>
-Encourage student research submissions
+Encourage Master's students to publish
+</li>
+
+<li>
+Share the opportunity with your research group
 </li>
 
 <li>
@@ -2330,7 +2657,16 @@ target="_blank"
 rel="noopener noreferrer"
 class="publish-btn secondary">
 
-View Published Research →
+View Published Papers →
+
+</a>
+
+
+<a
+href="mailto:gulzaibsharif786@gmail.com?subject=IJBAI%20Publication%20Enquiry"
+class="publish-btn secondary">
+
+Contact Editorial Office →
 
 </a>
 
@@ -2357,15 +2693,24 @@ International Research Institute Pakistan (IRIP)
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      EXPERIENCE
-========================================================= -->
+====================================================== -->
 
 <section
 class="content-section"
 id="experience">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -2396,14 +2741,14 @@ International Journal of Bioinformatics and Artificial Intelligence
 
 <p>
 
-Leading academic publishing activities and supporting
-research communication in bioinformatics, artificial
-intelligence, machine learning and related interdisciplinary fields.
+Leading academic publishing activities
+and supporting research communication in
+bioinformatics, artificial intelligence,
+machine learning and related fields.
 
 </p>
 
 </div>
-
 
 
 <div class="timeline-item">
@@ -2418,14 +2763,14 @@ FlyRank
 
 <p>
 
-Developing practical machine-learning skills through
-projects involving data analysis, research framing,
-model development and Google Search discoverability.
+Developing practical machine-learning skills
+through projects involving data analysis,
+research framing, model development and
+Google Search discoverability.
 
 </p>
 
 </div>
-
 
 
 <div class="timeline-item">
@@ -2456,15 +2801,24 @@ research development and scholarly communication.
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      EDUCATION
-========================================================= -->
+====================================================== -->
 
 <section
 class="content-section"
 id="education">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -2478,8 +2832,9 @@ Academic foundation.
 </h2>
 
 <p>
-My academic training provides the foundation for my
-work in bioinformatics, artificial intelligence and research.
+My academic training provides the foundation
+for my work in bioinformatics, artificial
+intelligence and research.
 </p>
 
 </div>
@@ -2495,7 +2850,7 @@ BS in Bioinformatics
 </h3>
 
 <div class="edu-institution">
-Final Year Student
+Final-Year Student
 </div>
 
 <p>
@@ -2507,7 +2862,6 @@ approaches to biological data.
 </p>
 
 </div>
-
 
 
 <div class="edu-card">
@@ -2522,9 +2876,9 @@ AI • ML • Data Science
 
 <p>
 
-Developing practical skills through machine-learning
-projects, programming assignments and applied
-computational research.
+Developing practical skills through
+machine-learning projects, programming
+assignments and applied computational research.
 
 </p>
 
@@ -2539,15 +2893,24 @@ computational research.
 
 
 
-<!-- ========================================================
-     CONTACT / MESSAGE
-========================================================= -->
+<!-- =====================================================
+     CONTACT
+====================================================== -->
 
 <section
 class="content-section"
 id="contact">
 
 <div class="container">
+
+
+<button
+class="home-return"
+data-home>
+
+← Back to Home
+
+</button>
 
 
 <div class="section-heading">
@@ -2562,8 +2925,9 @@ Let's connect and work together.
 
 <p>
 
-For research collaboration, academic communication,
-technical projects, publishing enquiries or professional opportunities.
+For research collaboration, academic
+communication, technical projects,
+publishing enquiries or professional opportunities.
 
 </p>
 
@@ -2573,8 +2937,6 @@ technical projects, publishing enquiries or professional opportunities.
 <div class="contact-layout">
 
 
-<!-- CONTACT INFORMATION -->
-
 <div class="contact-info">
 
 <h3>
@@ -2583,9 +2945,8 @@ Get in touch
 
 <p>
 
-You can contact me directly or send a message using
-the form. I would be happy to hear about research,
-projects, collaboration or academic work.
+You can contact me directly or send a
+message using the form.
 
 </p>
 
@@ -2613,8 +2974,7 @@ LinkedIn
 
 <a
 href="https://www.linkedin.com/in/gulzaibsharif/"
-target="_blank"
-rel="noopener noreferrer">
+target="_blank">
 
 linkedin.com/in/gulzaibsharif
 
@@ -2631,8 +2991,7 @@ GitHub
 
 <a
 href="https://github.com/Gulzaibsharif-coder"
-target="_blank"
-rel="noopener noreferrer">
+target="_blank">
 
 github.com/Gulzaibsharif-coder
 
@@ -2649,8 +3008,7 @@ IJBAI
 
 <a
 href="https://journal.irip.ac.pk/index.php/ijbai/"
-target="_blank"
-rel="noopener noreferrer">
+target="_blank">
 
 Visit IJBAI Journal
 
@@ -2675,7 +3033,6 @@ Send Me a Message
 
 Have a question, suggestion, research idea,
 project proposal or collaboration opportunity?
-Write it below.
 
 </p>
 
@@ -2739,7 +3096,9 @@ required>
 Subject
 </label>
 
-<select name="subject" required>
+<select
+name="subject"
+required>
 
 <option value="">
 Select a subject
@@ -2809,11 +3168,12 @@ Send Message →
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+====================================================== -->
 
-<footer id="footer">
+<footer
+id="footer">
 
 <div class="container footer-inner">
 
@@ -2836,18 +3196,26 @@ AI • Machine Learning • Bioinformatics • Research
 <a
 href="https://github.com/Gulzaibsharif-coder"
 target="_blank">
+
 GitHub
+
 </a>
+
 
 <a
 href="https://www.linkedin.com/in/gulzaibsharif/"
 target="_blank">
+
 LinkedIn
+
 </a>
+
 
 <a
 href="mailto:gulzaibsharif786@gmail.com">
+
 Email
+
 </a>
 
 </div>
@@ -2859,57 +3227,196 @@ Email
 
 
 
-<!-- ========================================================
+<!-- =====================================================
      JAVASCRIPT
-========================================================= -->
+====================================================== -->
 
 <script>
 
-const buttons =
-document.querySelectorAll("[data-section]");
+/*
+=========================================================
+PORTFOLIO NAVIGATION
+
+HOME:
+Only Hero is visible.
+
+OTHER SECTION:
+Hero disappears completely.
+Only selected section appears.
+
+HOME BUTTON:
+All sections disappear.
+Hero comes back.
+
+=========================================================
+*/
+
+
+const hero =
+document.getElementById("home");
+
 
 const sections =
 document.querySelectorAll(".content-section");
 
+
+const navigationButtons =
+document.querySelectorAll("[data-section]");
+
+
+const homeButton =
+document.getElementById("homeButton");
+
+
+const homeLogo =
+document.getElementById("homeLogo");
+
+
+const backHomeButtons =
+document.querySelectorAll("[data-home]");
+
+
 const footer =
 document.getElementById("footer");
+
 
 const navButtons =
 document.querySelectorAll(".nav-btn");
 
 
-/*
-    Open a specific section.
-*/
+/* =====================================================
+   CLOSE EVERYTHING
+====================================================== */
 
-function openSection(sectionId){
+function closeAllSections(){
 
-    sections.forEach(section => {
+    /*
+       Hide every content section.
+    */
+
+    sections.forEach(function(section){
 
         section.classList.remove("visible");
 
     });
 
 
-    const selected =
+    /*
+       Hide footer.
+    */
+
+    footer.classList.remove("visible");
+
+
+    /*
+       Remove active state
+       from navigation.
+    */
+
+    navButtons.forEach(function(button){
+
+        button.classList.remove("active");
+
+    });
+
+}
+
+
+/* =====================================================
+   SHOW HOME
+====================================================== */
+
+function showHome(){
+
+    /*
+       IMPORTANT:
+       First hide EVERYTHING.
+    */
+
+    closeAllSections();
+
+
+    /*
+       Then show only the introduction.
+    */
+
+    hero.classList.remove("hidden");
+
+
+    /*
+       Scroll to top.
+    */
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+/* =====================================================
+   SHOW SPECIFIC SECTION
+====================================================== */
+
+function showSection(sectionId){
+
+    /*
+       First hide the HOME page.
+    */
+
+    hero.classList.add("hidden");
+
+
+    /*
+       Hide every other section.
+    */
+
+    sections.forEach(function(section){
+
+        section.classList.remove("visible");
+
+    });
+
+
+    /*
+       Find requested section.
+    */
+
+    const selectedSection =
         document.getElementById(sectionId);
 
 
-    if(selected){
+    /*
+       Show ONLY requested section.
+    */
 
-        selected.classList.add("visible");
+    if(selectedSection){
 
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        selectedSection.classList.add("visible");
 
     }
 
 
-    navButtons.forEach(button => {
+    /*
+       Footer appears only
+       when a content section is open.
+    */
+
+    footer.classList.add("visible");
+
+
+    /*
+       Highlight selected navigation item.
+    */
+
+    navButtons.forEach(function(button){
 
         button.classList.remove("active");
+
 
         if(
             button.dataset.section === sectionId
@@ -2922,26 +3429,36 @@ function openSection(sectionId){
     });
 
 
-    footer.classList.add("visible");
+    /*
+       Go to top.
+    */
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 }
 
 
-/*
-    Every navigation / hero button
-    opens its requested section.
-*/
+/* =====================================================
+   NAVIGATION BUTTONS
+====================================================== */
 
-buttons.forEach(button => {
+navigationButtons.forEach(function(button){
 
     button.addEventListener(
         "click",
         function(){
 
-            const section =
-                this.dataset.section;
+            const sectionId =
+                button.dataset.section;
 
-            openSection(section);
+
+            showSection(sectionId);
 
         }
     );
@@ -2949,44 +3466,59 @@ buttons.forEach(button => {
 });
 
 
-/*
-    Logo returns visitor to
-    the introductory page.
-*/
+/* =====================================================
+   HOME BUTTON
+====================================================== */
 
-document
-.querySelector(".logo")
-.addEventListener(
+homeButton.addEventListener(
+    "click",
+    function(){
+
+        showHome();
+
+    }
+);
+
+
+/* =====================================================
+   LOGO = HOME
+====================================================== */
+
+homeLogo.addEventListener(
     "click",
     function(event){
 
         event.preventDefault();
 
-
-        sections.forEach(section => {
-
-            section.classList.remove("visible");
-
-        });
-
-
-        navButtons.forEach(button => {
-
-            button.classList.remove("active");
-
-        });
-
-
-        footer.classList.remove("visible");
-
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
+        showHome();
 
     }
 );
+
+
+/* =====================================================
+   BACK TO HOME BUTTONS
+====================================================== */
+
+backHomeButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            showHome();
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   START WEBSITE ON HOME
+====================================================== */
+
+showHome();
 
 </script>
 
