@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -11,8 +12,10 @@
 Gulzaib Sharif | AI • Machine Learning • Bioinformatics
 </title>
 
-<meta name="description"
-content="Gulzaib Sharif — Bioinformatics student, Machine Learning practitioner, academic writer and Editor-in-Chief of IJBAI.">
+<meta
+    name="description"
+    content="Gulzaib Sharif — Bioinformatics student, Machine Learning practitioner, academic writer and Editor-in-Chief of IJBAI."
+>
 
 <link rel="preconnect"
       href="https://fonts.googleapis.com">
@@ -21,24 +24,67 @@ content="Gulzaib Sharif — Bioinformatics student, Machine Learning practitione
       href="https://fonts.gstatic.com"
       crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-rel="stylesheet">
-
+<link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+>
 
 <style>
 
 /* =========================================================
-   GLOBAL DESIGN
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+        'IBM Plex Sans',
+        Arial,
+        sans-serif;
+
+    background:#F4F2F6;
+
+    color:#241A2E;
+
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button,
+input,
+textarea,
+select{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   VARIABLES
 ========================================================= */
 
 :root{
 
     --paper:#F4F2F6;
+
     --paper-alt:#EDEAF1;
 
     --card:#FFFFFF;
 
     --ink:#241A2E;
+
     --ink2:#3A2842;
 
     --muted:#6E6277;
@@ -46,61 +92,18 @@ rel="stylesheet">
     --border:#E1DCE6;
 
     --accent:#7A2E4D;
+
+    --accent-dark:#611F3B;
+
     --accent-dim:#F4E6EC;
 
-    --accent2:#B98B2E;
+    --gold:#B98B2E;
 
-    --accent3:#4C6B8A;
+    --blue:#4C6B8A;
 
     --shadow:
-        0 20px 55px rgba(36,26,46,.10);
-
-}
-
-*{
-
-    margin:0;
-    padding:0;
-
-    box-sizing:border-box;
-
-}
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-body{
-
-    font-family:
-        'IBM Plex Sans',
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background:var(--paper);
-
-    color:var(--ink);
-
-    line-height:1.7;
-
-}
-
-a{
-
-    text-decoration:none;
-    color:inherit;
-
-}
-
-button,
-input,
-textarea,
-select{
-
-    font-family:inherit;
+        0 20px 55px
+        rgba(36,26,46,.10);
 
 }
 
@@ -112,10 +115,10 @@ select{
 .hero h1,
 .section-heading h2,
 .sb-logo,
+.project-card h3,
+.research-card h3,
 .journal-main h3,
 .publish-card h3,
-.research-card h3,
-.project-card h3,
 .timeline-item h3,
 .edu-card h3,
 .contact-info h3,
@@ -129,8 +132,8 @@ select{
 
 }
 
-.kicker,
 .eyebrow,
+.kicker,
 .tag,
 .project-number,
 .journal-badge,
@@ -147,15 +150,11 @@ select{
 
 
 /* =========================================================
-   MAIN LAYOUT
+   MAIN SHELL
 ========================================================= */
 
 .shell{
-
-    display:flex;
-
     min-height:100vh;
-
 }
 
 
@@ -165,28 +164,28 @@ select{
 
 .sidebar{
 
-    width:290px;
-
-    flex-shrink:0;
-
     position:fixed;
 
     top:0;
     left:0;
     bottom:0;
 
-    border-right:
-        1px solid var(--border);
+    width:290px;
 
     background:var(--paper);
 
-    overflow-y:auto;
+    border-right:
+        1px solid var(--border);
 
-    z-index:999;
+    z-index:1000;
+
+    overflow-y:auto;
 
 }
 
 .sidebar-inner{
+
+    min-height:100%;
 
     padding:34px 28px;
 
@@ -194,13 +193,15 @@ select{
 
     flex-direction:column;
 
-    min-height:100%;
-
 }
 
 .sb-kicker{
 
-    color:var(--accent2);
+    color:var(--gold);
+
+    font-family:
+        'IBM Plex Mono',
+        monospace;
 
     font-size:12px;
 
@@ -216,24 +217,20 @@ select{
 
 .sb-logo{
 
-    font-size:26px;
+    color:var(--ink);
+
+    font-size:27px;
 
     font-weight:700;
-
-    color:var(--ink);
 
     letter-spacing:-.5px;
 
     margin-bottom:10px;
 
-    cursor:pointer;
-
 }
 
 .sb-logo span{
-
     color:var(--accent);
-
 }
 
 .sb-tagline{
@@ -242,11 +239,15 @@ select{
 
     font-size:13.5px;
 
-    margin-bottom:26px;
+    line-height:1.7;
+
+    margin-bottom:25px;
 
 }
 
 .sb-divider{
+
+    width:100%;
 
     height:1px;
 
@@ -290,40 +291,30 @@ select{
 
     gap:12px;
 
-    text-align:left;
-
-    background:none;
+    width:100%;
 
     border:none;
 
     border-left:
         3px solid transparent;
 
-    padding:11px 12px;
+    background:transparent;
 
     border-radius:8px;
 
-    cursor:pointer;
+    padding:11px 12px;
 
     color:var(--ink2);
+
+    text-align:left;
+
+    cursor:pointer;
 
     font-size:14.5px;
 
     font-weight:500;
 
-    transition:.2s;
-
-}
-
-.sb-num{
-
-    color:var(--muted);
-
-    font-size:12px;
-
-    font-weight:600;
-
-    min-width:20px;
+    transition:.2s ease;
 
 }
 
@@ -337,26 +328,32 @@ select{
 
     background:var(--accent-dim);
 
-    border-left-color:var(--accent2);
+    border-left-color:var(--gold);
+
+    color:var(--accent);
 
     font-weight:700;
 
-    color:var(--accent);
+}
+
+.sb-num{
+
+    min-width:20px;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+    font-weight:600;
 
 }
 
 .sb-item.active .sb-num{
-
-    color:var(--accent2);
-
+    color:var(--gold);
 }
 
 .sb-footer{
-
     margin-top:auto;
-
-    padding-top:24px;
-
 }
 
 .sb-links{
@@ -375,38 +372,34 @@ select{
 
     font-size:13.5px;
 
-    font-weight:500;
-
 }
 
 .sb-links a:hover{
-
     color:var(--accent);
-
 }
 
 .sb-contact{
 
-    display:inline-flex;
+    display:block;
 
-    margin-top:14px;
+    width:max-content;
+
+    margin-top:16px;
+
+    padding:9px 17px;
 
     border:
         1.5px solid var(--accent);
 
-    padding:9px 16px;
-
     border-radius:30px;
+
+    background:transparent;
 
     color:var(--accent);
 
     font-size:13px;
 
     font-weight:600;
-
-    text-align:center;
-
-    justify-content:center;
 
     cursor:pointer;
 
@@ -429,9 +422,7 @@ select{
 
     margin-left:290px;
 
-    flex-grow:1;
-
-    width:100%;
+    min-height:100vh;
 
 }
 
@@ -447,6 +438,8 @@ select{
     display:flex;
 
     align-items:center;
+
+    overflow:hidden;
 
     background:
 
@@ -464,32 +457,31 @@ select{
 
         var(--paper);
 
-    overflow:hidden;
-
 }
 
 .hero.hidden{
-
     display:none;
-
 }
 
 .hero-grid{
 
+    width:100%;
+
+    max-width:1250px;
+
+    margin:0 auto;
+
+    padding:
+        65px 55px;
+
     display:grid;
 
     grid-template-columns:
-        1.05fr .95fr;
+        1fr 1fr;
 
-    gap:40px;
+    gap:35px;
 
     align-items:center;
-
-    padding:70px 56px;
-
-    max-width:1180px;
-
-    margin:auto;
 
 }
 
@@ -506,9 +498,10 @@ select{
 
     gap:9px;
 
-    padding:9px 17px;
+    padding:
+        9px 17px;
 
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
@@ -517,13 +510,11 @@ select{
 
     color:var(--accent);
 
-    font-weight:600;
-
     font-size:13px;
 
-    margin-bottom:25px;
+    font-weight:600;
 
-    letter-spacing:.3px;
+    margin-bottom:25px;
 
 }
 
@@ -535,40 +526,36 @@ select{
 
     border-radius:50%;
 
-    background:var(--accent2);
+    background:var(--gold);
 
     box-shadow:
         0 0 0 5px
-        rgba(185,139,46,.16);
+        rgba(185,139,46,.15);
 
 }
 
 .hero h1{
 
     font-size:
-        clamp(52px,6.5vw,88px);
+        clamp(55px,6.7vw,88px);
 
-    line-height:.98;
+    line-height:.95;
 
-    letter-spacing:-2.5px;
-
-    color:var(--ink);
-
-    margin-bottom:24px;
+    letter-spacing:-3px;
 
     font-weight:600;
+
+    margin-bottom:25px;
 
 }
 
 .hero h1 span{
-
     color:var(--accent);
-
 }
 
 .hero-lead{
 
-    max-width:760px;
+    max-width:700px;
 
     font-size:20px;
 
@@ -579,9 +566,7 @@ select{
 }
 
 .hero-lead strong{
-
     color:var(--ink);
-
 }
 
 .hero-description{
@@ -614,22 +599,21 @@ select{
 
     justify-content:center;
 
-    gap:8px;
-
-    padding:13px 20px;
-
-    border-radius:10px;
+    padding:
+        13px 20px;
 
     border:
         1px solid var(--border);
 
-    font-weight:600;
+    border-radius:10px;
 
     font-size:14px;
 
+    font-weight:600;
+
     cursor:pointer;
 
-    transition:.25s;
+    transition:.25s ease;
 
 }
 
@@ -645,7 +629,7 @@ select{
 
 .btn-primary:hover{
 
-    background:#611F3B;
+    background:var(--accent-dark);
 
     transform:translateY(-2px);
 
@@ -653,7 +637,7 @@ select{
 
 .btn-outline{
 
-    background:var(--card);
+    background:white;
 
     color:var(--ink);
 
@@ -661,9 +645,9 @@ select{
 
 .btn-outline:hover{
 
-    border-color:var(--accent);
-
     color:var(--accent);
+
+    border-color:var(--accent);
 
     transform:translateY(-2px);
 
@@ -671,31 +655,35 @@ select{
 
 
 /* =========================================================
-   CHARACTER SCENE
+   HERO SCENE
 ========================================================= */
 
 .scene{
 
     position:relative;
 
-    height:460px;
+    width:100%;
+
+    height:520px;
 
     overflow:visible;
 
 }
 
 
-/* Floor */
+/* =========================================================
+   FLOOR
+========================================================= */
 
 .scene-floor{
 
     position:absolute;
 
-    left:0;
+    left:2%;
 
-    right:0;
+    right:2%;
 
-    bottom:64px;
+    bottom:62px;
 
     height:1px;
 
@@ -703,10 +691,12 @@ select{
         linear-gradient(
             90deg,
             transparent,
-            var(--border) 20%,
-            var(--border) 80%,
+            var(--border) 15%,
+            var(--border) 85%,
             transparent
         );
+
+    z-index:1;
 
 }
 
@@ -719,18 +709,18 @@ select{
 
     position:absolute;
 
-    bottom:64px;
+    left:37%;
 
-    left:51%;
+    bottom:62px;
+
+    width:125px;
+
+    height:160px;
 
     transform:
         translateX(-50%);
 
-    width:120px;
-
-    height:150px;
-
-    z-index:1;
+    z-index:2;
 
 }
 
@@ -738,22 +728,22 @@ select{
 
     position:absolute;
 
-    bottom:56px;
+    left:20px;
 
-    left:18px;
+    bottom:58px;
 
-    width:84px;
+    width:85px;
 
-    height:96px;
+    height:100px;
 
     border-radius:
-        14px 14px 6px 6px;
+        15px 15px 7px 7px;
 
     background:
         linear-gradient(
             160deg,
             #EDE7F0,
-            #DED4E3
+            #DDD3E2
         );
 
     border:
@@ -765,27 +755,27 @@ select{
 
     position:absolute;
 
-    bottom:44px;
-
     left:0;
 
-    width:120px;
+    bottom:45px;
 
-    height:20px;
+    width:125px;
 
-    border-radius:10px;
+    height:21px;
+
+    border-radius:11px;
 
     background:
         linear-gradient(
             180deg,
             #EDE7F0,
-            #DED4E3
+            #DCD1E1
         );
-
-    box-shadow:var(--shadow);
 
     border:
         1px solid var(--border);
+
+    box-shadow:var(--shadow);
 
 }
 
@@ -797,66 +787,48 @@ select{
 
     width:8px;
 
-    height:46px;
-
-    border-radius:3px;
+    height:48px;
 
     background:#CFC3D5;
+
+    border-radius:3px;
 
 }
 
 .chair-leg.l{
-
     left:14px;
-
 }
 
 .chair-leg.r{
-
-    left:98px;
-
+    right:14px;
 }
 
 
 /* =========================================================
-   PROFESSIONAL BUSINESSWOMAN IMAGE
+   BUSINESSWOMAN
 ========================================================= */
-
-/*
-   Put this file beside index.html:
-
-   businesswoman.png
-
-   The image should ideally have a transparent
-   background.
-*/
 
 .character{
 
     position:absolute;
 
-    left:51%;
+    left:37%;
 
-    bottom:60px;
+    bottom:58px;
 
-    width:250px;
+    width:230px;
 
-    height:430px;
+    height:425px;
 
     object-fit:contain;
 
-    object-position:
-        center bottom;
+    object-position:center bottom;
 
-    z-index:3;
-
-    pointer-events:none;
+    z-index:4;
 
     opacity:0;
 
-    /*
-       Start below the scene.
-    */
+    pointer-events:none;
 
     transform:
         translate(-50%,430px);
@@ -871,7 +843,7 @@ select{
 
 
 /* =========================================================
-   WALK INTO SCENE
+   WALK IN
 ========================================================= */
 
 .character.walking{
@@ -885,7 +857,7 @@ select{
 
 
 /* =========================================================
-   WAVE POSITION
+   STOP
 ========================================================= */
 
 .character.waving{
@@ -895,111 +867,229 @@ select{
     transform:
         translate(-50%,0);
 
-    /*
-       Gentle movement gives the
-       impression of greeting.
-    */
-
-    animation:
-        characterGreeting
-        .55s
-        ease-in-out
-        infinite;
-
-}
-
-@keyframes characterGreeting{
-
-    0%,100%{
-
-        margin-top:0;
-
-    }
-
-    50%{
-
-        margin-top:-4px;
-
-    }
-
 }
 
 
 /* =========================================================
-   SEATED POSITION
+   SIT
 ========================================================= */
 
 .character.seated{
 
     opacity:1;
 
-    /*
-       Move downward so the woman
-       appears seated on the chair.
-    */
-
     transform:
-        translate(-50%,62px);
-
-    animation:none;
+        translate(-50%,65px);
 
 }
 
 
 /* =========================================================
-   INTRODUCTION CHATBOX
+   WAVING HAND
 ========================================================= */
 
 /*
-   IMPORTANT:
+   Because businesswoman.png is a flat image,
+   the actual arm inside that image cannot be
+   animated independently.
 
-   The bubble is positioned at the
-   FAR RIGHT of the scene.
+   This creates a separate greeting hand.
+*/
 
-   It no longer sits over the woman's
-   face.
+.wave-hand{
+
+    position:absolute;
+
+    left:42%;
+
+    top:115px;
+
+    width:55px;
+
+    height:95px;
+
+    z-index:7;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:
+        rotate(-20deg)
+        scale(.7);
+
+    transform-origin:
+        50% 90%;
+
+}
+
+
+/* Forearm */
+
+.wave-hand::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:20px;
+
+    bottom:2px;
+
+    width:17px;
+
+    height:57px;
+
+    border-radius:
+        12px 12px 6px 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #D99A74,
+            #F0BE98
+        );
+
+    transform:
+        rotate(-16deg);
+
+}
+
+
+/* Palm */
+
+.wave-hand::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:6px;
+
+    top:3px;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:
+        48% 52% 48% 46%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #F3C39D,
+            #DD9B75
+        );
+
+    box-shadow:
+        inset -3px -3px 0
+        rgba(120,60,40,.08);
+
+}
+
+
+/* =========================================================
+   WAVING ANIMATION
+========================================================= */
+
+.wave-hand.show{
+
+    opacity:1;
+
+    transform:
+        rotate(-20deg)
+        scale(1);
+
+    animation:
+        handWave
+        .45s
+        ease-in-out
+        infinite alternate;
+
+}
+
+@keyframes handWave{
+
+    0%{
+
+        transform:
+            rotate(-38deg)
+            translateY(0)
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+            rotate(28deg)
+            translateY(-5px)
+            scale(1.03);
+
+    }
+
+}
+
+
+/* =========================================================
+   CHATBOX
+========================================================= */
+
+/*
+   The most important change:
+
+   The bubble has a fixed right-side position.
+   It does NOT sit on top of the character.
 */
 
 .intro-bubble{
 
     position:absolute;
 
-    top:20px;
+    top:28px;
 
-    right:-10px;
+    right:0;
 
     width:230px;
 
-    max-width:230px;
+    min-height:175px;
 
-    background:var(--card);
+    padding:
+        20px 21px;
+
+    background:white;
 
     border:
         1px solid var(--border);
 
     border-radius:
-        16px 16px 4px 16px;
+        17px 17px 5px 17px;
 
-    padding:18px 20px;
-
-    box-shadow:var(--shadow);
+    box-shadow:
+        0 20px 55px
+        rgba(36,26,46,.12);
 
     opacity:0;
 
+    visibility:hidden;
+
     transform:
-        translateY(10px);
+        translateY(15px);
 
     transition:
         opacity .6s ease,
         transform .6s ease;
 
-    z-index:10;
+    z-index:30;
 
 }
 
 .intro-bubble.show{
 
     opacity:1;
+
+    visibility:visible;
 
     transform:
         translateY(0);
@@ -1012,11 +1102,11 @@ select{
 
     color:var(--ink);
 
-    font-size:17px;
+    font-size:18px;
 
-    margin-bottom:8px;
+    line-height:1.3;
 
-    font-weight:600;
+    margin-bottom:10px;
 
 }
 
@@ -1041,12 +1131,12 @@ select{
 
     min-height:100vh;
 
-    padding:
-        64px 56px 80px;
-
     max-width:1180px;
 
     margin:auto;
+
+    padding:
+        65px 55px 90px;
 
     animation:
         sectionIn .4s ease;
@@ -1054,29 +1144,19 @@ select{
 }
 
 .content-section.visible{
-
     display:block;
-
 }
 
 @keyframes sectionIn{
 
     from{
-
         opacity:0;
-
-        transform:
-            translateY(12px);
-
+        transform:translateY(12px);
     }
 
     to{
-
         opacity:1;
-
-        transform:
-            translateY(0);
-
+        transform:translateY(0);
     }
 
 }
@@ -1091,15 +1171,15 @@ select{
 
 .kicker{
 
-    color:var(--accent2);
+    color:var(--gold);
 
-    font-size:12.5px;
+    font-size:12px;
 
     font-weight:600;
 
-    text-transform:uppercase;
-
     letter-spacing:2px;
+
+    text-transform:uppercase;
 
     margin-bottom:12px;
 
@@ -1108,17 +1188,13 @@ select{
 .section-heading h2{
 
     font-size:
-        clamp(34px,4.2vw,50px);
+        clamp(35px,4vw,52px);
 
-    line-height:1.1;
+    line-height:1.08;
 
     letter-spacing:-1px;
 
-    color:var(--ink);
-
-    margin-bottom:14px;
-
-    font-weight:600;
+    margin-bottom:15px;
 
 }
 
@@ -1139,10 +1215,9 @@ select{
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-    gap:56px;
+    gap:55px;
 
 }
 
@@ -1150,7 +1225,7 @@ select{
 
     color:#4E4356;
 
-    font-size:16.5px;
+    font-size:16px;
 
     margin-bottom:18px;
 
@@ -1160,8 +1235,7 @@ select{
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:14px;
 
@@ -1169,14 +1243,14 @@ select{
 
 .highlight{
 
-    padding:22px;
-
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
 
     border-radius:14px;
+
+    padding:22px;
 
 }
 
@@ -1186,13 +1260,14 @@ select{
 
     color:var(--accent);
 
+    font-family:
+        'Fraunces',
+        Georgia,
+        serif;
+
     font-size:18px;
 
     margin-bottom:5px;
-
-    font-family:
-        'Fraunces',
-        serif;
 
 }
 
@@ -1231,27 +1306,25 @@ select{
 
     padding:26px;
 
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
 
     border-radius:16px;
 
-    transition:.3s;
+    transition:.3s ease;
 
 }
 
 .project-card:hover{
 
     transform:
-        translateY(-6px);
+        translateY(-5px);
 
-    border-color:
-        var(--accent2);
+    box-shadow:var(--shadow);
 
-    box-shadow:
-        var(--shadow);
+    border-color:var(--gold);
 
 }
 
@@ -1261,17 +1334,16 @@ select{
         linear-gradient(
             155deg,
             #F6EEE0,
-            var(--card)
+            white
         );
 
-    border-color:
-        var(--accent2);
+    border-color:var(--gold);
 
 }
 
 .project-number{
 
-    color:var(--accent3);
+    color:var(--blue);
 
     font-size:12px;
 
@@ -1279,31 +1351,25 @@ select{
 
     margin-bottom:20px;
 
-    letter-spacing:.5px;
-
 }
 
 .project-card h3{
-
-    color:var(--ink);
 
     font-size:21px;
 
     margin-bottom:11px;
 
-    font-weight:600;
-
 }
 
 .project-card p{
 
-    color:var(--muted);
-
     flex-grow:1;
 
-    margin-bottom:18px;
+    color:var(--muted);
 
     font-size:14.5px;
+
+    margin-bottom:18px;
 
 }
 
@@ -1325,7 +1391,8 @@ select{
 
     color:var(--ink2);
 
-    padding:5px 10px;
+    padding:
+        5px 10px;
 
     border-radius:20px;
 
@@ -1339,9 +1406,9 @@ select{
 
     color:var(--accent);
 
-    font-weight:700;
-
     font-size:14px;
+
+    font-weight:700;
 
 }
 
@@ -1354,8 +1421,7 @@ select{
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
     gap:22px;
 
@@ -1365,7 +1431,7 @@ select{
 
     padding:28px;
 
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
@@ -1376,13 +1442,9 @@ select{
 
 .research-card h3{
 
-    color:var(--ink);
-
     font-size:21px;
 
     margin-bottom:12px;
-
-    font-weight:600;
 
 }
 
@@ -1411,34 +1473,6 @@ select{
    IJBAI
 ========================================================= */
 
-.journal-header{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
-    margin-bottom:22px;
-
-}
-
-.journal-badge{
-
-    padding:8px 13px;
-
-    border-radius:20px;
-
-    background:var(--accent-dim);
-
-    color:var(--accent);
-
-    font-size:11px;
-
-    font-weight:600;
-
-}
-
 .journal-grid{
 
     display:grid;
@@ -1446,15 +1480,13 @@ select{
     grid-template-columns:
         1.1fr .9fr;
 
-    gap:36px;
-
-    align-items:start;
+    gap:35px;
 
 }
 
 .journal-main{
 
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
@@ -1465,16 +1497,41 @@ select{
 
 }
 
-.journal-main h3{
+.journal-header{
 
-    color:var(--ink);
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:22px;
+
+}
+
+.journal-badge{
+
+    padding:
+        8px 13px;
+
+    background:var(--accent-dim);
+
+    color:var(--accent);
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+.journal-main h3{
 
     font-size:22px;
 
     margin:
-        26px 0 14px;
-
-    font-weight:600;
+        25px 0 13px;
 
 }
 
@@ -1482,9 +1539,9 @@ select{
 
     color:#4E4356;
 
-    font-size:16px;
+    font-size:15.5px;
 
-    margin-bottom:16px;
+    margin-bottom:15px;
 
 }
 
@@ -1492,10 +1549,9 @@ select{
 
     display:grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns:1fr 1fr;
 
-    gap:11px;
+    gap:10px;
 
 }
 
@@ -1508,13 +1564,13 @@ select{
     border:
         1px solid var(--border);
 
-    border-radius:11px;
+    border-radius:10px;
 
     color:var(--ink);
 
-    font-weight:600;
+    font-size:13.5px;
 
-    font-size:14px;
+    font-weight:600;
 
 }
 
@@ -1543,8 +1599,6 @@ select{
 
     margin-bottom:14px;
 
-    font-weight:600;
-
 }
 
 .publish-card p{
@@ -1557,10 +1611,10 @@ select{
 
 .publish-card ul{
 
+    color:#DAE5EE;
+
     margin:
         14px 0 22px 20px;
-
-    color:#DAE5EE;
 
 }
 
@@ -1582,28 +1636,17 @@ select{
 
     padding:14px;
 
+    margin-bottom:10px;
+
     border-radius:10px;
 
     background:white;
 
     color:#2F4560;
 
-    font-weight:700;
-
-    margin-bottom:10px;
-
-    transition:.25s;
-
     font-size:14px;
 
-}
-
-.publish-btn:hover{
-
-    background:#F0E9D8;
-
-    transform:
-        translateY(-2px);
+    font-weight:700;
 
 }
 
@@ -1614,7 +1657,8 @@ select{
     color:white;
 
     border:
-        1px solid rgba(255,255,255,.35);
+        1px solid
+        rgba(255,255,255,.35);
 
 }
 
@@ -1658,24 +1702,19 @@ select{
 
     border-radius:50%;
 
-    background:var(--accent2);
+    background:var(--gold);
 
     border:
         4px solid var(--paper);
 
     box-shadow:
-        0 0 0 1px
-        var(--accent2);
+        0 0 0 1px var(--gold);
 
 }
 
 .timeline-item h3{
 
-    color:var(--ink);
-
     font-size:21px;
-
-    font-weight:600;
 
 }
 
@@ -1683,12 +1722,12 @@ select{
 
     color:var(--accent);
 
+    font-size:13px;
+
     font-weight:600;
 
     margin:
         4px 0 9px;
-
-    font-size:13px;
 
 }
 
@@ -1707,8 +1746,7 @@ select{
 
     display:grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
 
     gap:20px;
 
@@ -1718,7 +1756,7 @@ select{
 
     padding:26px;
 
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
@@ -1729,13 +1767,9 @@ select{
 
 .edu-card h3{
 
-    color:var(--ink);
-
     font-size:21px;
 
     margin-bottom:6px;
-
-    font-weight:600;
 
 }
 
@@ -1743,9 +1777,9 @@ select{
 
     color:var(--accent);
 
-    font-weight:600;
-
     font-size:12.5px;
+
+    font-weight:600;
 
 }
 
@@ -1753,9 +1787,9 @@ select{
 
     color:var(--muted);
 
-    margin-top:9px;
-
     font-size:14.5px;
+
+    margin-top:9px;
 
 }
 
@@ -1798,8 +1832,6 @@ select{
 
     margin-bottom:14px;
 
-    font-weight:600;
-
 }
 
 .contact-info p{
@@ -1826,9 +1858,9 @@ select{
 
     color:white;
 
-    margin-bottom:4px;
-
     font-size:13px;
+
+    margin-bottom:4px;
 
 }
 
@@ -1836,9 +1868,9 @@ select{
 
     color:#F0D9A9;
 
-    word-break:break-word;
-
     font-size:14px;
+
+    word-break:break-word;
 
 }
 
@@ -1846,7 +1878,7 @@ select{
 
     padding:30px;
 
-    background:var(--card);
+    background:white;
 
     border:
         1px solid var(--border);
@@ -1857,13 +1889,9 @@ select{
 
 .message-card h3{
 
-    color:var(--ink);
-
     font-size:25px;
 
     margin-bottom:8px;
-
-    font-weight:600;
 
 }
 
@@ -1887,11 +1915,11 @@ select{
 
     color:var(--ink);
 
+    font-size:13.5px;
+
     font-weight:600;
 
     margin-bottom:6px;
-
-    font-size:13.5px;
 
 }
 
@@ -1901,7 +1929,8 @@ select{
 
     width:100%;
 
-    padding:12px 13px;
+    padding:
+        12px 13px;
 
     border:
         1px solid var(--border);
@@ -1910,11 +1939,11 @@ select{
 
     outline:none;
 
-    font-size:14.5px;
+    background:var(--paper);
 
     color:var(--ink);
 
-    background:var(--paper);
+    font-size:14.5px;
 
 }
 
@@ -1940,18 +1969,16 @@ select{
 
     color:white;
 
-    font-weight:700;
-
     font-size:15px;
+
+    font-weight:700;
 
     cursor:pointer;
 
 }
 
 .submit-btn:hover{
-
-    background:#611F3B;
-
+    background:var(--accent-dark);
 }
 
 
@@ -1963,16 +1990,21 @@ footer{
 
     background:var(--paper-alt);
 
-    color:var(--muted);
-
-    padding:26px 56px;
-
     border-top:
         1px solid var(--border);
+
+    color:var(--muted);
+
+    padding:
+        26px 55px;
 
 }
 
 .footer-inner{
+
+    max-width:1080px;
+
+    margin:auto;
 
     display:flex;
 
@@ -1982,23 +2014,20 @@ footer{
 
     gap:20px;
 
-    max-width:1068px;
-
-    margin:auto;
-
 }
 
 .footer-logo{
 
     color:var(--ink);
 
+    font-family:
+        'Fraunces',
+        Georgia,
+        serif;
+
     font-size:18px;
 
     font-weight:700;
-
-    font-family:
-        'Fraunces',
-        serif;
 
 }
 
@@ -2011,22 +2040,62 @@ footer{
 }
 
 .footer-links a:hover{
-
     color:var(--accent);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+    .sidebar{
+        width:250px;
+    }
+
+    .main-content{
+        margin-left:250px;
+    }
+
+    .hero-grid{
+        padding:
+            50px 35px;
+    }
+
+    .character{
+        width:210px;
+        height:390px;
+    }
+
+    .intro-bubble{
+        width:205px;
+    }
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE — 950
 ========================================================= */
 
 @media(max-width:950px){
 
-    .hero-grid,
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .scene{
+
+        height:520px;
+
+    }
+
     .about-grid,
-    .journal-grid,
     .research-grid,
+    .journal-grid,
     .contact-layout{
 
         grid-template-columns:1fr;
@@ -2039,50 +2108,14 @@ footer{
 
     }
 
-    .scene{
-
-        height:400px;
-
-    }
-
-    .sidebar{
-
-        width:240px;
-
-    }
-
-    .main-content{
-
-        margin-left:240px;
-
-    }
-
-    .character{
-
-        left:50%;
-
-    }
-
-    .intro-bubble{
-
-        right:0;
-
-        top:0;
-
-        width:215px;
-
-    }
-
 }
 
 
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
 @media(max-width:760px){
-
-    .shell{
-
-        flex-direction:column;
-
-    }
 
     .sidebar{
 
@@ -2101,7 +2134,8 @@ footer{
 
     .sidebar-inner{
 
-        padding:22px 20px;
+        padding:
+            22px 20px;
 
     }
 
@@ -2111,8 +2145,6 @@ footer{
 
         overflow-x:auto;
 
-        gap:6px;
-
         padding-bottom:4px;
 
     }
@@ -2121,12 +2153,12 @@ footer{
 
         flex-shrink:0;
 
+        width:auto;
+
     }
 
     .sb-footer{
-
         display:none;
-
     }
 
     .main-content{
@@ -2135,20 +2167,18 @@ footer{
 
     }
 
-    .hero-grid,
-    .content-section{
+    .hero-grid{
 
-        padding-left:24px;
-
-        padding-right:24px;
+        padding:
+            40px 24px;
 
     }
 
     .hero h1{
 
-        font-size:48px;
+        font-size:52px;
 
-        letter-spacing:-1.5px;
+        letter-spacing:-2px;
 
     }
 
@@ -2160,19 +2190,31 @@ footer{
 
     .scene{
 
-        height:380px;
+        height:570px;
 
     }
 
+    /*
+       Woman centered on mobile.
+    */
+
     .character{
-
-        width:200px;
-
-        height:350px;
 
         left:50%;
 
-        bottom:45px;
+        bottom:55px;
+
+        width:190px;
+
+        height:350px;
+
+    }
+
+    .chair{
+
+        left:50%;
+
+        bottom:55px;
 
     }
 
@@ -2183,17 +2225,22 @@ footer{
 
     }
 
+    /*
+       Put chatbox above/right.
+    */
+
     .intro-bubble{
+
+        top:5px;
 
         right:0;
 
-        top:-5px;
-
         width:190px;
 
-        max-width:190px;
+        min-height:auto;
 
-        padding:14px 16px;
+        padding:
+            14px 16px;
 
     }
 
@@ -2205,7 +2252,23 @@ footer{
 
     .intro-bubble p{
 
-        font-size:12.5px;
+        font-size:12px;
+
+    }
+
+    /*
+       Wave hand on mobile.
+    */
+
+    .wave-hand{
+
+        left:58%;
+
+        top:190px;
+
+        transform:
+            rotate(-20deg)
+            scale(.85);
 
     }
 
@@ -2221,11 +2284,46 @@ footer{
 
     }
 
+    .content-section{
+
+        padding:
+            55px 24px 75px;
+
+    }
+
+    footer{
+
+        padding:
+            25px 24px;
+
+    }
+
     .footer-inner{
 
         flex-direction:column;
 
         text-align:center;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        scroll-behavior:auto !important;
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
 
     }
 
@@ -2242,1797 +2340,1754 @@ footer{
 <div class="shell">
 
 
-<!-- =========================================================
+<!-- =======================================================
      SIDEBAR
-========================================================= -->
+======================================================= -->
 
 <aside class="sidebar">
 
-<div class="sidebar-inner">
+    <div class="sidebar-inner">
 
 
-<div class="sb-kicker">
-AI • Bioinformatics
-</div>
+        <div class="sb-kicker">
+            AI • Bioinformatics
+        </div>
 
 
-<a href="#"
-   class="sb-logo"
-   id="homeLogo">
+        <a
+            href="#"
+            class="sb-logo"
+            id="homeLogo"
+        >
+            GULZAIB<span>.</span>
+        </a>
 
-GULZAIB<span>.</span>
 
-</a>
+        <div class="sb-tagline">
 
+            ML practitioner · academic writer ·
+            Editor-in-Chief, IJBAI
 
-<div class="sb-tagline">
+        </div>
 
-ML practitioner · academic writer ·
-Editor-in-Chief, IJBAI
 
-</div>
+        <div class="sb-divider"></div>
 
 
-<div class="sb-divider"></div>
+        <div class="sb-label">
+            Sections
+        </div>
 
 
-<div class="sb-label">
-Sections
-</div>
+        <nav class="sb-nav">
 
 
-<nav class="sb-nav">
+            <button
+                class="sb-item active"
+                id="homeButton"
+            >
 
+                <span class="sb-num">
+                    00
+                </span>
 
-<button class="sb-item active"
-        id="homeButton">
+                Home
 
-<span class="sb-num">
-00
-</span>
+            </button>
 
-Home
 
-</button>
+            <button
+                class="sb-item"
+                data-section="about"
+            >
 
+                <span class="sb-num">
+                    01
+                </span>
 
-<button class="sb-item"
-        data-section="about">
+                About
 
-<span class="sb-num">
-01
-</span>
+            </button>
 
-About
 
-</button>
+            <button
+                class="sb-item"
+                data-section="projects"
+            >
 
+                <span class="sb-num">
+                    02
+                </span>
 
-<button class="sb-item"
-        data-section="projects">
+                Projects
 
-<span class="sb-num">
-02
-</span>
+            </button>
 
-Projects
 
-</button>
+            <button
+                class="sb-item"
+                data-section="research"
+            >
 
+                <span class="sb-num">
+                    03
+                </span>
 
-<button class="sb-item"
-        data-section="research">
+                Research
 
-<span class="sb-num">
-03
-</span>
+            </button>
 
-Research
 
-</button>
+            <button
+                class="sb-item"
+                data-section="ijbai"
+            >
 
+                <span class="sb-num">
+                    04
+                </span>
 
-<button class="sb-item"
-        data-section="ijbai">
+                IJBAI
 
-<span class="sb-num">
-04
-</span>
+            </button>
 
-IJBAI
 
-</button>
+            <button
+                class="sb-item"
+                data-section="experience"
+            >
 
+                <span class="sb-num">
+                    05
+                </span>
 
-<button class="sb-item"
-        data-section="experience">
+                Experience
 
-<span class="sb-num">
-05
-</span>
+            </button>
 
-Experience
 
-</button>
+            <button
+                class="sb-item"
+                data-section="education"
+            >
 
+                <span class="sb-num">
+                    06
+                </span>
 
-<button class="sb-item"
-        data-section="education">
+                Education
 
-<span class="sb-num">
-06
-</span>
+            </button>
 
-Education
 
-</button>
+            <button
+                class="sb-item"
+                data-section="contact"
+            >
 
+                <span class="sb-num">
+                    07
+                </span>
 
-<button class="sb-item"
-        data-section="contact">
+                Contact
 
-<span class="sb-num">
-07
-</span>
+            </button>
 
-Contact
 
-</button>
+        </nav>
 
 
-</nav>
+        <div class="sb-footer">
 
 
-<div class="sb-footer">
+            <div class="sb-divider"></div>
 
 
-<div class="sb-divider"></div>
+            <div class="sb-links">
 
 
-<div class="sb-links">
+                <a
+                    href="https://github.com/Gulzaibsharif-coder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub ↗
+                </a>
 
 
-<a href="https://github.com/Gulzaibsharif-coder"
-   target="_blank"
-   rel="noopener noreferrer">
+                <a
+                    href="https://www.linkedin.com/in/gulzaibsharif/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn ↗
+                </a>
 
-GitHub ↗
 
-</a>
+                <a
+                    href="https://content-refresh-priority-advisor.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Gulzaib AI Lab ↗
+                </a>
 
 
-<a href="https://www.linkedin.com/in/gulzaibsharif/"
-   target="_blank"
-   rel="noopener noreferrer">
+            </div>
 
-LinkedIn ↗
 
-</a>
+            <button
+                class="sb-contact"
+                data-section="contact"
+            >
+                Get in touch
+            </button>
 
 
-<a href="https://content-refresh-priority-advisor.netlify.app/"
-   target="_blank"
-   rel="noopener noreferrer">
+        </div>
 
-Gulzaib AI Lab ↗
 
-</a>
-
-
-</div>
-
-
-<button class="sb-contact"
-        data-section="contact">
-
-Get in touch
-
-</button>
-
-
-</div>
-
-
-</div>
+    </div>
 
 </aside>
 
 
-<!-- =========================================================
-     MAIN
-========================================================= -->
+<!-- =======================================================
+     MAIN CONTENT
+======================================================= -->
 
-<div class="main-content">
+<main class="main-content">
 
 
-<!-- =========================================================
+<!-- =======================================================
      HOME
-========================================================= -->
-
-<section class="hero"
-         id="home">
-
-
-<div class="hero-grid">
-
-
-<div>
-
-
-<div class="eyebrow">
-
-<span class="dot"></span>
-
-AI • Machine Learning •
-Bioinformatics • Research
-
-</div>
-
-
-<h1>
-
-Gulzaib<br>
-
-<span>
-Sharif
-</span>
-
-</h1>
-
-
-<p class="hero-lead">
-
-Building at the intersection of
-
-<strong>
-Artificial Intelligence,
-Machine Learning,
-Bioinformatics
-</strong>
-
-and academic research.
-
-</p>
-
-
-<p class="hero-description">
-
-Final-year BS Bioinformatics student,
-machine learning learner,
-academic writer and Editor-in-Chief
-of the International Journal of
-Bioinformatics and Artificial Intelligence
-(IJBAI).
-
-</p>
-
-
-<div class="hero-buttons">
-
-
-<button class="btn btn-primary"
-        data-section="projects">
-
-Explore My Projects →
-
-</button>
-
-
-<a href="Gulzaib_Sharif_CV.pdf"
-   target="_blank"
-   class="btn btn-outline">
-
-Download CV
-
-</a>
-
-
-<a href="https://github.com/Gulzaibsharif-coder"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn btn-outline">
-
-GitHub ↗
-
-</a>
-
-
-<a href="https://www.linkedin.com/in/gulzaibsharif/"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="btn btn-outline">
-
-LinkedIn ↗
-
-</a>
-
-
-<button class="btn btn-outline"
-        data-section="ijbai">
-
-Publish With Us
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-<!-- =========================================================
-     CHARACTER AREA
-========================================================= -->
-
-<div class="scene">
-
-
-<div class="scene-floor"></div>
-
-
-<!-- CHAIR -->
-
-<div class="chair">
-
-<div class="chair-back"></div>
-
-<div class="chair-seat"></div>
-
-<div class="chair-leg l"></div>
-
-<div class="chair-leg r"></div>
-
-</div>
-
-
-<!-- =====================================================
-     BUSINESSWOMAN
-=====================================================
-
-     IMPORTANT:
-
-     businesswoman.png must be in the same
-     folder as index.html.
-
-===================================================== -->
-
-<img
-    src="businesswoman.png"
-    alt="Professional businesswoman"
-    class="character"
-    id="character"
+======================================================= -->
+
+<section
+    class="hero"
+    id="home"
 >
 
 
-<!-- =====================================================
-     INTRODUCTION BOX
-===================================================== -->
-
-<div class="intro-bubble"
-     id="introBubble">
+    <div class="hero-grid">
 
 
-<strong>
-Hi, I'm Gulzaib Sharif 👋
-</strong>
+        <!-- HERO TEXT -->
+
+        <div>
 
 
-<p>
+            <div class="eyebrow">
 
-Bioinformatics student &amp;
-ML practitioner.
+                <span class="dot"></span>
 
-I build research tools,
-write academic papers,
-and edit IJBAI.
+                AI • Machine Learning •
+                Bioinformatics • Research
 
-Take a look around!
-
-</p>
+            </div>
 
 
-</div>
+            <h1>
+
+                Gulzaib<br>
+
+                <span>
+                    Sharif
+                </span>
+
+            </h1>
 
 
-</div>
+            <p class="hero-lead">
+
+                Building at the intersection of
+
+                <strong>
+                    Artificial Intelligence,
+                    Machine Learning,
+                    Bioinformatics
+                </strong>
+
+                and academic research.
+
+            </p>
 
 
-</div>
+            <p class="hero-description">
+
+                Final-year BS Bioinformatics student,
+                machine learning learner, academic
+                writer and Editor-in-Chief of the
+                International Journal of Bioinformatics
+                and Artificial Intelligence (IJBAI).
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <button
+                    class="btn btn-primary"
+                    data-section="projects"
+                >
+                    Explore My Projects →
+                </button>
+
+
+                <a
+                    href="Gulzaib_Sharif_CV.pdf"
+                    target="_blank"
+                    class="btn btn-outline"
+                >
+                    Download CV
+                </a>
+
+
+                <a
+                    href="https://github.com/Gulzaibsharif-coder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline"
+                >
+                    GitHub ↗
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/gulzaibsharif/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-outline"
+                >
+                    LinkedIn ↗
+                </a>
+
+
+                <button
+                    class="btn btn-outline"
+                    data-section="ijbai"
+                >
+                    Publish With Us
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             CHARACTER SCENE
+        ================================================== -->
+
+        <div class="scene">
+
+
+            <div class="scene-floor"></div>
+
+
+            <!-- CHAIR -->
+
+            <div class="chair">
+
+
+                <div class="chair-back"></div>
+
+
+                <div class="chair-seat"></div>
+
+
+                <div class="chair-leg l"></div>
+
+
+                <div class="chair-leg r"></div>
+
+
+            </div>
+
+
+            <!-- BUSINESSWOMAN -->
+
+            <img
+                src="businesswoman.png"
+                alt="Professional businesswoman"
+                class="character"
+                id="character"
+            >
+
+
+            <!-- ANIMATED GREETING HAND -->
+
+            <div
+                class="wave-hand"
+                id="waveHand"
+                aria-hidden="true"
+            ></div>
+
+
+            <!-- CHATBOX -->
+
+            <div
+                class="intro-bubble"
+                id="introBubble"
+            >
+
+
+                <strong>
+                    Hi, I'm Gulzaib Sharif 👋
+                </strong>
+
+
+                <p>
+
+                    Bioinformatics student &amp;
+                    ML practitioner. I build research
+                    tools, write academic papers,
+                    and edit IJBAI. Take a look around!
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      ABOUT
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="about">
-
-
-<div class="section-heading">
-
-
-<div class="kicker">
-01 · About Me
-</div>
+<section
+    class="content-section"
+    id="about"
+>
 
 
-<h2>
-
-Where computational thinking
-meets biological research.
-
-</h2>
+    <div class="section-heading">
 
 
-<p>
-
-A final-year bioinformatics student
-developing practical skills in AI,
-machine learning, data analysis
-and academic research.
-
-</p>
+        <div class="kicker">
+            01 · About Me
+        </div>
 
 
-</div>
+        <h2>
+            Where computational thinking
+            meets biological research.
+        </h2>
 
 
-<div class="about-grid">
+        <p>
+
+            A final-year bioinformatics student
+            developing practical skills in AI,
+            machine learning, data analysis and
+            academic research.
+
+        </p>
 
 
-<div class="about-text">
+    </div>
 
 
-<p>
-
-I am a final-year BS Bioinformatics
-student interested in the intersection
-of biological sciences, artificial
-intelligence, machine learning and
-computational research.
-
-</p>
+    <div class="about-grid">
 
 
-<p>
-
-My technical development focuses
-on programming, data analysis and
-machine-learning approaches for
-scientific and biological problems.
-
-</p>
+        <div class="about-text">
 
 
-<p>
+            <p>
 
-I am also an academic writer and
-serve as Editor-in-Chief of the
-International Journal of Bioinformatics
-and Artificial Intelligence (IJBAI).
+                I am a final-year BS Bioinformatics
+                student interested in the intersection
+                of biological sciences, artificial
+                intelligence, machine learning and
+                computational research.
 
-</p>
-
-
-<p>
-
-My goal is to develop research and
-technical projects that are scientifically
-meaningful, practical and reproducible.
-
-</p>
+            </p>
 
 
-</div>
+            <p>
+
+                My technical development focuses on
+                programming, data analysis and
+                machine-learning approaches for
+                scientific and biological problems.
+
+            </p>
 
 
-<div class="highlights">
+            <p>
+
+                I am also an academic writer and
+                serve as Editor-in-Chief of the
+                International Journal of Bioinformatics
+                and Artificial Intelligence (IJBAI).
+
+            </p>
 
 
-<div class="highlight">
+            <p>
 
-<strong>
-Bioinformatics
-</strong>
+                My goal is to develop research and
+                technical projects that are scientifically
+                meaningful, practical and reproducible.
 
-<span>
-Computational biology and biological
-data analysis.
-</span>
-
-</div>
+            </p>
 
 
-<div class="highlight">
-
-<strong>
-Machine Learning
-</strong>
-
-<span>
-Applied machine-learning projects
-and experimentation.
-</span>
-
-</div>
+        </div>
 
 
-<div class="highlight">
-
-<strong>
-Artificial Intelligence
-</strong>
-
-<span>
-AI concepts and data-driven
-problem solving.
-</span>
-
-</div>
+        <div class="highlights">
 
 
-<div class="highlight">
+            <div class="highlight">
 
-<strong>
-Academic Writing
-</strong>
+                <strong>
+                    Bioinformatics
+                </strong>
 
-<span>
-Research writing and scholarly
-communication.
-</span>
+                <span>
+                    Computational biology and
+                    biological data analysis.
+                </span>
 
-</div>
-
-
-</div>
+            </div>
 
 
-</div>
+            <div class="highlight">
+
+                <strong>
+                    Machine Learning
+                </strong>
+
+                <span>
+                    Applied machine-learning projects
+                    and experimentation.
+                </span>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    Artificial Intelligence
+                </strong>
+
+                <span>
+                    AI concepts and data-driven
+                    problem solving.
+                </span>
+
+            </div>
+
+
+            <div class="highlight">
+
+                <strong>
+                    Academic Writing
+                </strong>
+
+                <span>
+                    Research writing and scholarly
+                    communication.
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      PROJECTS
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="projects">
+<section
+    class="content-section"
+    id="projects"
+>
 
 
-<div class="section-heading">
+    <div class="section-heading">
 
 
-<div class="kicker">
-02 · Projects
-</div>
+        <div class="kicker">
+            02 · Projects
+        </div>
 
 
-<h2>
-Selected technical work.
-</h2>
+        <h2>
+            Selected technical work.
+        </h2>
 
 
-<p>
+        <p>
 
-Explore my programming,
-machine-learning and bioinformatics
-projects — including a live suite
-of research tools built during
-my ML internship at FlyRank.
+            Explore my programming,
+            machine-learning and bioinformatics
+            projects.
 
-</p>
+        </p>
 
 
-</div>
+    </div>
 
 
-<div class="projects">
+    <div class="projects">
 
 
-<div class="project-card featured">
+        <div class="project-card featured">
 
 
-<div class="project-number">
-LIVE / GULZAIB AI LAB
-</div>
+            <div class="project-number">
+                LIVE / GULZAIB AI LAB
+            </div>
 
 
-<h3>
-Research Tools Suite
-</h3>
+            <h3>
+                Research Tools Suite
+            </h3>
 
 
-<p>
+            <p>
 
-Six browser-based research &amp;
-ML tools built during my internship:
-Content Refresh Priority Advisor,
-SEO Content Analyzer, Search Performance
-Dashboard, ML Model Evaluation Lab,
-Research Analytics, and an AI CV Auditor
-&amp; Rebuilder.
+                Browser-based research and
+                machine-learning tools developed
+                during my FlyRank ML internship.
 
-</p>
+            </p>
 
 
-<div class="tags">
+            <div class="tags">
 
-<span class="tag">
-JavaScript
-</span>
+                <span class="tag">
+                    JavaScript
+                </span>
 
-<span class="tag">
-Machine Learning
-</span>
+                <span class="tag">
+                    Machine Learning
+                </span>
 
-<span class="tag">
-SEO
-</span>
+                <span class="tag">
+                    SEO
+                </span>
 
-<span class="tag">
-Browser-based
-</span>
+                <span class="tag">
+                    Browser-based
+                </span>
 
-</div>
+            </div>
 
 
-<a href="https://content-refresh-priority-advisor.netlify.app/"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="project-link">
+            <a
+                href="https://content-refresh-priority-advisor.netlify.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+            >
+                Open Live Tool →
+            </a>
 
-Open Live Tools →
 
-</a>
+        </div>
 
 
-</div>
+        <div class="project-card">
 
 
-<div class="project-card">
+            <div class="project-number">
+                01 / MACHINE LEARNING
+            </div>
 
 
-<div class="project-number">
-01 / MACHINE LEARNING
-</div>
+            <h3>
+                FlyRank ML Capstone
+            </h3>
 
 
-<h3>
-FlyRank ML Capstone
-</h3>
+            <p>
 
+                Machine-learning capstone focused
+                on Google Search ranking,
+                discoverability and content
+                opportunity analysis.
 
-<p>
+            </p>
 
-Machine-learning capstone focused
-on Google Search ranking,
-discoverability and data-driven
-content opportunity analysis.
 
-</p>
+            <div class="tags">
 
+                <span class="tag">
+                    Python
+                </span>
 
-<div class="tags">
+                <span class="tag">
+                    Machine Learning
+                </span>
 
-<span class="tag">
-Python
-</span>
+                <span class="tag">
+                    Data Analysis
+                </span>
 
-<span class="tag">
-Machine Learning
-</span>
+            </div>
 
-<span class="tag">
-Data Analysis
-</span>
 
-<span class="tag">
-Google Search
-</span>
+            <a
+                href="https://github.com/Gulzaibsharif-coder/flyrank-ml-capstone"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+            >
+                Open GitHub Project →
+            </a>
 
-</div>
 
+        </div>
 
-<a href="https://github.com/Gulzaibsharif-coder/flyrank-ml-capstone"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="project-link">
 
-Open GitHub Project →
+        <div class="project-card">
 
-</a>
 
+            <div class="project-number">
+                02 / BIOINFORMATICS
+            </div>
 
-</div>
 
+            <h3>
+                Nucleotide Counter
+            </h3>
 
-<div class="project-card">
 
+            <p>
 
-<div class="project-number">
-02 / BIOINFORMATICS
-</div>
+                A computational bioinformatics
+                project for analysing DNA
+                nucleotide sequences.
 
+            </p>
 
-<h3>
-Nucleotide Counter &amp;
-Sequence Analyzer
-</h3>
 
+            <div class="tags">
 
-<p>
+                <span class="tag">
+                    Python
+                </span>
 
-A computational bioinformatics
-project for analysing DNA
-nucleotide sequences.
+                <span class="tag">
+                    DNA
+                </span>
 
-</p>
+                <span class="tag">
+                    Bioinformatics
+                </span>
 
+            </div>
 
-<div class="tags">
 
-<span class="tag">
-Python
-</span>
+            <a
+                href="https://github.com/Gulzaibsharif-coder/Nucleotide-Counter-in-a-sequence-DNA-Sequence-Analyzer"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+            >
+                Open GitHub Project →
+            </a>
 
-<span class="tag">
-DNA
-</span>
 
-<span class="tag">
-Bioinformatics
-</span>
+        </div>
 
-<span class="tag">
-Sequence Analysis
-</span>
 
-</div>
+        <div class="project-card">
 
 
-<a href="https://github.com/Gulzaibsharif-coder/Nucleotide-Counter-in-a-sequence-DNA-Sequence-Analyzer"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="project-link">
+            <div class="project-number">
+                03 / BIOINFORMATICS
+            </div>
 
-Open GitHub Project →
 
-</a>
+            <h3>
+                DNA Mutation Detector
+            </h3>
 
 
-</div>
+            <p>
 
+                A programming project exploring
+                DNA sequence changes and mutation
+                detection.
 
-<div class="project-card">
+            </p>
 
 
-<div class="project-number">
-03 / BIOINFORMATICS
-</div>
+            <div class="tags">
 
+                <span class="tag">
+                    Python
+                </span>
 
-<h3>
-DNA Mutation Detector
-</h3>
+                <span class="tag">
+                    DNA
+                </span>
 
+                <span class="tag">
+                    Mutation
+                </span>
 
-<p>
+            </div>
 
-A programming project exploring
-DNA sequence changes and
-mutation detection.
 
-</p>
+            <a
+                href="https://github.com/Gulzaibsharif-coder/DNA-Mutation-Detector"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-link"
+            >
+                Open GitHub Project →
+            </a>
 
 
-<div class="tags">
+        </div>
 
-<span class="tag">
-Python
-</span>
 
-<span class="tag">
-DNA
-</span>
-
-<span class="tag">
-Mutation
-</span>
-
-<span class="tag">
-Bioinformatics
-</span>
-
-</div>
-
-
-<a href="https://github.com/Gulzaibsharif-coder/DNA-Mutation-Detector"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="project-link">
-
-Open GitHub Project →
-
-</a>
-
-
-</div>
-
-
-</div>
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      RESEARCH
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="research">
-
-
-<div class="section-heading">
-
-
-<div class="kicker">
-03 · Research
-</div>
+<section
+    class="content-section"
+    id="research"
+>
 
 
-<h2>
-
-Academic writing and
-interdisciplinary research.
-
-</h2>
+    <div class="section-heading">
 
 
-<p>
-
-Research interests spanning
-computational science, AI,
-bioinformatics and scholarly
-communication.
-
-</p>
+        <div class="kicker">
+            03 · Research
+        </div>
 
 
-</div>
+        <h2>
+            Academic writing and
+            interdisciplinary research.
+        </h2>
 
 
-<div class="research-grid">
+        <p>
+
+            Research interests spanning
+            computational science, AI,
+            bioinformatics and scholarly
+            communication.
+
+        </p>
 
 
-<div class="research-card">
+    </div>
 
 
-<h3>
-Research Interests
-</h3>
+    <div class="research-grid">
 
 
-<ul>
-
-<li>
-Artificial Intelligence
-</li>
-
-<li>
-Machine Learning
-</li>
-
-<li>
-Bioinformatics
-</li>
-
-<li>
-Computational Biology
-</li>
-
-<li>
-Data Science
-</li>
-
-<li>
-Genomics and biological data
-</li>
-
-<li>
-AI-assisted research
-</li>
-
-</ul>
+        <div class="research-card">
 
 
-</div>
+            <h3>
+                Research Interests
+            </h3>
 
 
-<div class="research-card">
+            <ul>
+
+                <li>
+                    Artificial Intelligence
+                </li>
+
+                <li>
+                    Machine Learning
+                </li>
+
+                <li>
+                    Bioinformatics
+                </li>
+
+                <li>
+                    Computational Biology
+                </li>
+
+                <li>
+                    Data Science
+                </li>
+
+                <li>
+                    Genomics and biological data
+                </li>
+
+                <li>
+                    AI-assisted research
+                </li>
+
+            </ul>
 
 
-<h3>
-Academic Writing
-</h3>
+        </div>
 
 
-<ul>
-
-<li>
-Research article development
-</li>
-
-<li>
-Literature review
-</li>
-
-<li>
-Academic manuscript writing
-</li>
-
-<li>
-Scientific communication
-</li>
-
-<li>
-Editorial work
-</li>
-
-<li>
-Research publication
-</li>
-
-</ul>
+        <div class="research-card">
 
 
-</div>
+            <h3>
+                Academic Writing
+            </h3>
 
 
-</div>
+            <ul>
+
+                <li>
+                    Research article development
+                </li>
+
+                <li>
+                    Literature review
+                </li>
+
+                <li>
+                    Academic manuscript writing
+                </li>
+
+                <li>
+                    Scientific communication
+                </li>
+
+                <li>
+                    Editorial work
+                </li>
+
+                <li>
+                    Research publication
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      IJBAI
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="ijbai">
+<section
+    class="content-section"
+    id="ijbai"
+>
 
 
-<div class="section-heading">
+    <div class="section-heading">
 
 
-<div class="kicker">
-04 · Academic Publishing
-</div>
+        <div class="kicker">
+            04 · Academic Publishing
+        </div>
 
 
-<h2>
+        <h2>
+            International Journal of
+            Bioinformatics and Artificial Intelligence
+        </h2>
 
-International Journal of
-Bioinformatics and Artificial Intelligence
 
-</h2>
+        <p>
 
+            IJBAI — research at the intersection
+            of Bioinformatics, Artificial Intelligence
+            and computational science.
 
-<p>
+        </p>
 
-IJBAI — research at the intersection
-of Bioinformatics, Artificial Intelligence
-and computational science.
 
-</p>
+    </div>
 
 
-</div>
+    <div class="journal-grid">
 
 
-<div class="journal-grid">
+        <div class="journal-main">
 
 
-<div class="journal-main">
+            <div class="journal-header">
 
 
-<div class="journal-header">
+                <div class="journal-badge">
+                    IJBAI
+                </div>
 
-<div class="journal-badge">
-IJBAI
-</div>
 
-<strong>
-Editor-in-Chief
-</strong>
+                <strong>
+                    Editor-in-Chief
+                </strong>
 
-</div>
 
+            </div>
 
-<p>
 
-I am privileged to serve as the
+            <p>
 
-<strong>
-Editor-in-Chief of the International
-Journal of Bioinformatics and Artificial
-Intelligence (IJBAI).
-</strong>
+                I serve as Editor-in-Chief of the
+                International Journal of Bioinformatics
+                and Artificial Intelligence (IJBAI).
 
-</p>
+            </p>
 
 
-<p>
+            <p>
 
-IJBAI is an international peer-reviewed,
-open-access journal dedicated to advancing
-research at the intersection of Artificial
-Intelligence, Bioinformatics, Computational
-Biology, Biotechnology, Biomedical Engineering,
-Machine Learning, Genomics, Precision Medicine,
-Data Science and related interdisciplinary fields.
+                The journal focuses on research at
+                the intersection of Artificial Intelligence,
+                Bioinformatics, Computational Biology,
+                Machine Learning, Genomics, Precision
+                Medicine and Data Science.
 
-</p>
+            </p>
 
 
-<h3>
-We Welcome Submissions
-</h3>
+            <h3>
+                We Welcome Submissions
+            </h3>
 
 
-<div class="journal-types">
+            <div class="journal-types">
 
 
-<div class="journal-type">
-Original Research Articles
-</div>
+                <div class="journal-type">
+                    Original Research Articles
+                </div>
 
 
-<div class="journal-type">
-Review Articles
-</div>
+                <div class="journal-type">
+                    Review Articles
+                </div>
 
 
-<div class="journal-type">
-Short Communications
-</div>
+                <div class="journal-type">
+                    Short Communications
+                </div>
 
 
-<div class="journal-type">
-Case Studies
-</div>
+                <div class="journal-type">
+                    Case Studies
+                </div>
 
 
-<div class="journal-type">
-Technical Notes
-</div>
+                <div class="journal-type">
+                    Technical Notes
+                </div>
 
 
-<div class="journal-type">
-Interdisciplinary Research
-</div>
+                <div class="journal-type">
+                    Interdisciplinary Research
+                </div>
 
 
-</div>
+            </div>
 
 
-<h3>
-Why Publish With IJBAI?
-</h3>
+            <h3>
+                Research Areas
+            </h3>
 
 
-<p>
+            <p>
 
-Researchers can submit original research,
-reviews, short communications, case studies
-and technical notes within the journal's scope.
+                Artificial Intelligence • Machine Learning •
+                Bioinformatics • Computational Biology •
+                Biotechnology • Biomedical Engineering •
+                Genomics • Precision Medicine • Data Science
 
-</p>
+            </p>
 
 
-<p>
+        </div>
 
-The editorial team aims to support authors
-through manuscript preparation, formatting,
-submission, peer review and revision.
 
-</p>
+        <div class="publish-card">
 
 
-<h3>
-Research Areas
-</h3>
+            <h3>
+                Publish With Us
+            </h3>
 
 
-<p>
+            <p>
 
-Artificial Intelligence • Machine Learning •
-Bioinformatics • Computational Biology •
-Biotechnology • Biomedical Engineering •
-Genomics • Precision Medicine • Data Science
+                Have research in AI,
+                bioinformatics, machine learning,
+                computational biology or related
+                interdisciplinary fields?
 
-</p>
+            </p>
 
 
-</div>
+            <ul>
 
+                <li>
+                    Submit original research
+                </li>
 
-<div class="publish-card">
+                <li>
+                    Submit a review article
+                </li>
 
+                <li>
+                    Submit technical work
+                </li>
 
-<h3>
-Publish With Us
-</h3>
+                <li>
+                    Share research with the journal
+                </li>
 
+            </ul>
 
-<p>
 
-Have research in AI, bioinformatics,
-machine learning, computational biology
-or related interdisciplinary fields?
+            <a
+                href="https://journal.irip.ac.pk/index.php/ijbai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="publish-btn"
+            >
+                Visit IJBAI Journal →
+            </a>
 
-</p>
 
+            <a
+                href="https://journal.irip.ac.pk/index.php/ijbai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="publish-btn secondary"
+            >
+                View Published Papers →
+            </a>
 
-<ul>
 
-<li>
-Submit your own research article
-</li>
+            <a
+                href="mailto:gulzaibsharif786@gmail.com?subject=IJBAI%20Publication%20Enquiry"
+                class="publish-btn secondary"
+            >
+                Contact Editorial Office →
+            </a>
 
-<li>
-Submit a review article
-</li>
 
-<li>
-Encourage your PhD students to publish
-</li>
+        </div>
 
-<li>
-Encourage Master's students to publish
-</li>
 
-<li>
-Share the opportunity with your research group
-</li>
-
-<li>
-Explore published research
-</li>
-
-</ul>
-
-
-<a href="https://journal.irip.ac.pk/index.php/ijbai/"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="publish-btn">
-
-Visit IJBAI Journal →
-
-</a>
-
-
-<a href="https://journal.irip.ac.pk/index.php/ijbai/"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="publish-btn secondary">
-
-View Published Papers →
-
-</a>
-
-
-<a href="mailto:gulzaibsharif786@gmail.com?subject=IJBAI%20Publication%20Enquiry"
-   class="publish-btn secondary">
-
-Contact Editorial Office →
-
-</a>
-
-
-<p style="
-font-size:13px;
-margin-top:18px;
-color:#C9D6E4;
-">
-
-Publisher:
-International Research Institute Pakistan (IRIP)
-
-</p>
-
-
-</div>
-
-
-</div>
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      EXPERIENCE
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="experience">
-
-
-<div class="section-heading">
-
-
-<div class="kicker">
-05 · Experience
-</div>
+<section
+    class="content-section"
+    id="experience"
+>
 
 
-<h2>
-
-Academic, editorial and
-technical development.
-
-</h2>
+    <div class="section-heading">
 
 
-</div>
+        <div class="kicker">
+            05 · Experience
+        </div>
 
 
-<div class="timeline">
+        <h2>
+            Academic, editorial and
+            technical development.
+        </h2>
 
 
-<div class="timeline-item">
+    </div>
 
 
-<h3>
-Editor-in-Chief — IJBAI
-</h3>
+    <div class="timeline">
 
 
-<div class="timeline-date">
-
-International Journal of Bioinformatics
-and Artificial Intelligence
-
-</div>
+        <div class="timeline-item">
 
 
-<p>
-
-Leading academic publishing activities
-and supporting research communication
-in bioinformatics, artificial intelligence,
-machine learning and related fields.
-
-</p>
+            <h3>
+                Editor-in-Chief — IJBAI
+            </h3>
 
 
-</div>
+            <div class="timeline-date">
+                International Journal of Bioinformatics
+                and Artificial Intelligence
+            </div>
 
 
-<div class="timeline-item">
+            <p>
+
+                Academic publishing, editorial
+                development and research communication
+                in bioinformatics, artificial intelligence
+                and machine learning.
+
+            </p>
 
 
-<h3>
-Machine Learning Intern
-</h3>
+        </div>
 
 
-<div class="timeline-date">
-FlyRank
-</div>
+        <div class="timeline-item">
 
 
-<p>
-
-Developing practical machine-learning
-skills through projects involving
-data analysis, research framing,
-model development and Google Search
-discoverability — including building
-and shipping the Gulzaib AI Lab
-research tools suite.
-
-</p>
+            <h3>
+                Machine Learning Intern
+            </h3>
 
 
-</div>
+            <div class="timeline-date">
+                FlyRank
+            </div>
 
 
-<div class="timeline-item">
+            <p>
+
+                Practical machine-learning development
+                involving data analysis, research
+                framing, model development and
+                Google Search discoverability.
+
+            </p>
 
 
-<h3>
-Academic Writer &amp; Researcher
-</h3>
+        </div>
 
 
-<div class="timeline-date">
-Academic Research
-</div>
+        <div class="timeline-item">
 
 
-<p>
-
-Working on academic writing,
-literature analysis, research
-development and scholarly communication.
-
-</p>
+            <h3>
+                Academic Writer &amp; Researcher
+            </h3>
 
 
-</div>
+            <div class="timeline-date">
+                Academic Research
+            </div>
 
 
-</div>
+            <p>
+
+                Research writing, literature analysis,
+                manuscript development and scholarly
+                communication.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      EDUCATION
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="education">
-
-
-<div class="section-heading">
-
-
-<div class="kicker">
-06 · Education
-</div>
+<section
+    class="content-section"
+    id="education"
+>
 
 
-<h2>
-Academic foundation.
-</h2>
+    <div class="section-heading">
 
 
-<p>
-
-My academic training provides
-the foundation for my work in
-bioinformatics, artificial intelligence
-and research.
-
-</p>
+        <div class="kicker">
+            06 · Education
+        </div>
 
 
-</div>
+        <h2>
+            Academic foundation.
+        </h2>
 
 
-<div class="education-grid">
+        <p>
+
+            Academic training supporting
+            my development in bioinformatics,
+            AI and machine learning.
+
+        </p>
 
 
-<div class="edu-card">
+    </div>
 
 
-<h3>
-BS in Bioinformatics
-</h3>
+    <div class="education-grid">
 
 
-<div class="edu-institution">
-Final-Year Student
-</div>
+        <div class="edu-card">
 
 
-<p>
-
-Currently completing my undergraduate
-degree with a focus on bioinformatics
-and computational approaches to
-biological data.
-
-</p>
+            <h3>
+                BS in Bioinformatics
+            </h3>
 
 
-</div>
+            <div class="edu-institution">
+                Final-Year Student
+            </div>
 
 
-<div class="edu-card">
+            <p>
+
+                Undergraduate training in
+                bioinformatics and computational
+                approaches to biological data.
+
+            </p>
 
 
-<h3>
-Technical Development
-</h3>
+        </div>
 
 
-<div class="edu-institution">
-AI • ML • Data Science
-</div>
+        <div class="edu-card">
 
 
-<p>
-
-Developing practical skills through
-machine-learning projects, programming
-assignments and applied computational
-research.
-
-</p>
+            <h3>
+                Machine Learning Development
+            </h3>
 
 
-</div>
+            <div class="edu-institution">
+                AI • ML • Data Science
+            </div>
 
 
-</div>
+            <p>
+
+                Practical development through
+                machine-learning projects,
+                programming and applied
+                computational research.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      CONTACT
-========================================================= -->
+======================================================= -->
 
-<section class="content-section"
-         id="contact">
+<section
+    class="content-section"
+    id="contact"
+>
 
 
-<div class="section-heading">
+    <div class="section-heading">
 
 
-<div class="kicker">
-07 · Contact
-</div>
+        <div class="kicker">
+            07 · Contact
+        </div>
 
 
-<h2>
-Let's connect and work together.
-</h2>
+        <h2>
+            Let's connect and work together.
+        </h2>
 
 
-<p>
+        <p>
 
-For research collaboration,
-academic communication,
-technical projects,
-publishing enquiries or
-professional opportunities.
+            For research collaboration,
+            academic communication,
+            technical projects,
+            publishing enquiries or
+            professional opportunities.
 
-</p>
+        </p>
 
 
-</div>
+    </div>
 
 
-<div class="contact-layout">
+    <div class="contact-layout">
 
 
-<div class="contact-info">
+        <div class="contact-info">
 
 
-<h3>
-Get in touch
-</h3>
+            <h3>
+                Get in touch
+            </h3>
 
 
-<p>
+            <p>
+                You can contact me directly
+                or send a message using the form.
+            </p>
 
-You can contact me directly
-or send a message using the form.
 
-</p>
+            <div class="contact-item">
 
+                <strong>
+                    Email
+                </strong>
 
-<div class="contact-item">
+                <a
+                    href="mailto:gulzaibsharif786@gmail.com"
+                >
+                    gulzaibsharif786@gmail.com
+                </a>
 
-<strong>
-Email
-</strong>
+            </div>
 
-<a href="mailto:gulzaibsharif786@gmail.com">
 
-gulzaibsharif786@gmail.com
+            <div class="contact-item">
 
-</a>
+                <strong>
+                    LinkedIn
+                </strong>
 
-</div>
+                <a
+                    href="https://www.linkedin.com/in/gulzaibsharif/"
+                    target="_blank"
+                >
+                    linkedin.com/in/gulzaibsharif
+                </a>
 
+            </div>
 
-<div class="contact-item">
 
-<strong>
-LinkedIn
-</strong>
+            <div class="contact-item">
 
-<a href="https://www.linkedin.com/in/gulzaibsharif/"
-   target="_blank">
+                <strong>
+                    GitHub
+                </strong>
 
-linkedin.com/in/gulzaibsharif
+                <a
+                    href="https://github.com/Gulzaibsharif-coder"
+                    target="_blank"
+                >
+                    github.com/Gulzaibsharif-coder
+                </a>
 
-</a>
+            </div>
 
-</div>
 
+            <div class="contact-item">
 
-<div class="contact-item">
+                <strong>
+                    IJBAI
+                </strong>
 
-<strong>
-GitHub
-</strong>
+                <a
+                    href="https://journal.irip.ac.pk/index.php/ijbai/"
+                    target="_blank"
+                >
+                    Visit IJBAI Journal
+                </a>
 
-<a href="https://github.com/Gulzaibsharif-coder"
-   target="_blank">
+            </div>
 
-github.com/Gulzaibsharif-coder
 
-</a>
+        </div>
 
-</div>
 
+        <div class="message-card">
 
-<div class="contact-item">
 
-<strong>
-IJBAI
-</strong>
+            <h3>
+                Send Me a Message
+            </h3>
 
-<a href="https://journal.irip.ac.pk/index.php/ijbai/"
-   target="_blank">
 
-Visit IJBAI Journal
+            <p>
 
-</a>
+                Have a question, research idea,
+                project proposal or collaboration
+                opportunity?
 
-</div>
+            </p>
 
 
-</div>
+            <form
+                action="https://formsubmit.co/gulzaibsharif786@gmail.com"
+                method="POST"
+            >
 
 
-<div class="message-card">
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Portfolio Message - Gulzaib Sharif"
+                >
 
 
-<h3>
-Send Me a Message
-</h3>
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table"
+                >
 
 
-<p>
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="true"
+                >
 
-Have a question, suggestion,
-research idea, project proposal
-or collaboration opportunity?
 
-</p>
+                <div class="form-group">
 
 
-<form
-action="https://formsubmit.co/gulzaibsharif786@gmail.com"
-method="POST">
+                    <label>
+                        Your Name
+                    </label>
 
 
-<input
-type="hidden"
-name="_subject"
-value="New Portfolio Message - Gulzaib Sharif">
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
 
 
-<input
-type="hidden"
-name="_template"
-value="table">
+                </div>
 
 
-<input
-type="hidden"
-name="_captcha"
-value="true">
+                <div class="form-group">
 
 
-<div class="form-group">
+                    <label>
+                        Your Email
+                    </label>
 
 
-<label>
-Your Name
-</label>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
 
 
-<input
-type="text"
-name="name"
-placeholder="Enter your name"
-required>
+                </div>
 
 
-</div>
+                <div class="form-group">
 
 
-<div class="form-group">
+                    <label>
+                        Subject
+                    </label>
 
 
-<label>
-Your Email
-</label>
+                    <select
+                        name="subject"
+                        required
+                    >
 
 
-<input
-type="email"
-name="email"
-placeholder="Enter your email"
-required>
+                        <option value="">
+                            Select a subject
+                        </option>
 
 
-</div>
+                        <option>
+                            Research Collaboration
+                        </option>
 
 
-<div class="form-group">
+                        <option>
+                            Academic Writing
+                        </option>
 
 
-<label>
-Subject
-</label>
+                        <option>
+                            Machine Learning Project
+                        </option>
 
 
-<select
-name="subject"
-required>
+                        <option>
+                            Bioinformatics
+                        </option>
 
 
-<option value="">
-Select a subject
-</option>
+                        <option>
+                            IJBAI Publication
+                        </option>
 
 
-<option>
-Research Collaboration
-</option>
+                        <option>
+                            General Enquiry
+                        </option>
 
 
-<option>
-Academic Writing
-</option>
+                    </select>
 
 
-<option>
-Machine Learning Project
-</option>
+                </div>
 
 
-<option>
-Bioinformatics
-</option>
+                <div class="form-group">
 
 
-<option>
-IJBAI Publication
-</option>
+                    <label>
+                        Message
+                    </label>
 
 
-<option>
-General Enquiry
-</option>
+                    <textarea
+                        name="message"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
 
 
-</select>
+                </div>
 
 
-</div>
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Send Message →
+                </button>
 
 
-<div class="form-group">
+            </form>
 
 
-<label>
-Message
-</label>
+        </div>
 
 
-<textarea
-name="message"
-placeholder="Write your message, suggestion, research idea or project proposal..."
-required>
-</textarea>
-
-
-</div>
-
-
-<button
-type="submit"
-class="submit-btn">
-
-Send Message →
-
-</button>
-
-
-</form>
-
-
-</div>
-
-
-</div>
+    </div>
 
 
 </section>
 
 
-<!-- =========================================================
+<!-- =======================================================
      FOOTER
-========================================================= -->
+======================================================= -->
 
 <footer>
 
 
-<div class="footer-inner">
+    <div class="footer-inner">
 
 
-<div>
+        <div>
+
+            <div class="footer-logo">
+                GULZAIB.
+            </div>
+
+            <div>
+                AI • Machine Learning •
+                Bioinformatics • Research
+            </div>
+
+        </div>
 
 
-<div class="footer-logo">
-GULZAIB.
-</div>
+        <div class="footer-links">
 
 
-<div>
-AI • Machine Learning •
-Bioinformatics • Research
-</div>
+            <a
+                href="https://github.com/Gulzaibsharif-coder"
+                target="_blank"
+            >
+                GitHub
+            </a>
 
 
-</div>
+            <a
+                href="https://www.linkedin.com/in/gulzaibsharif/"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
 
 
-<div class="footer-links">
+            <a
+                href="mailto:gulzaibsharif786@gmail.com"
+            >
+                Email
+            </a>
 
 
-<a href="https://github.com/Gulzaibsharif-coder"
-   target="_blank">
-
-GitHub
-
-</a>
+        </div>
 
 
-<a href="https://www.linkedin.com/in/gulzaibsharif/"
-   target="_blank">
-
-LinkedIn
-
-</a>
-
-
-<a href="mailto:gulzaibsharif786@gmail.com">
-
-Email
-
-</a>
-
-
-</div>
-
-
-</div>
+    </div>
 
 
 </footer>
 
 
+</main>
+
+
 </div>
 
-</div>
 
-
-<!-- =========================================================
+<!-- =======================================================
      JAVASCRIPT
-========================================================= -->
+======================================================= -->
 
 <script>
 
@@ -4044,51 +4099,63 @@ const hero =
     document.getElementById("home");
 
 const sections =
-    document.querySelectorAll(".content-section");
+    document.querySelectorAll(
+        ".content-section"
+    );
 
 const navigationButtons =
-    document.querySelectorAll("[data-section]");
+    document.querySelectorAll(
+        "[data-section]"
+    );
 
 const homeButton =
-    document.getElementById("homeButton");
+    document.getElementById(
+        "homeButton"
+    );
 
 const homeLogo =
-    document.getElementById("homeLogo");
+    document.getElementById(
+        "homeLogo"
+    );
 
 const sbItems =
-    document.querySelectorAll(".sb-item");
+    document.querySelectorAll(
+        ".sb-item"
+    );
 
 const character =
-    document.getElementById("character");
+    document.getElementById(
+        "character"
+    );
+
+const waveHand =
+    document.getElementById(
+        "waveHand"
+    );
 
 const introBubble =
-    document.getElementById("introBubble");
+    document.getElementById(
+        "introBubble"
+    );
 
 let walkTimer = null;
 
 
 /* =========================================================
-   CLOSE SECTIONS
+   RESET NAVIGATION
 ========================================================= */
 
-function closeAllSections(){
+function resetNavigation(){
 
-    sections.forEach(section => {
+    sbItems.forEach(
+        button => {
 
-        section.classList.remove(
-            "visible"
-        );
+            button.classList.remove(
+                "active"
+            );
 
-    });
-
-
-    sbItems.forEach(button => {
-
-        button.classList.remove(
-            "active"
-        );
-
-    });
+        }
+    );
 
 }
 
@@ -4099,15 +4166,29 @@ function closeAllSections(){
 
 function showHome(){
 
-    closeAllSections();
+    sections.forEach(
+        section => {
+
+            section.classList.remove(
+                "visible"
+            );
+
+        }
+    );
+
 
     hero.classList.remove(
         "hidden"
     );
 
+
+    resetNavigation();
+
+
     homeButton.classList.add(
         "active"
     );
+
 
     window.scrollTo({
 
@@ -4134,49 +4215,51 @@ function showSection(sectionId){
     );
 
 
-    sections.forEach(section => {
+    sections.forEach(
+        section => {
 
-        section.classList.remove(
-            "visible"
-        );
+            section.classList.remove(
+                "visible"
+            );
 
-    });
+        }
+    );
 
 
-    const selectedSection =
+    const selected =
         document.getElementById(
             sectionId
         );
 
 
-    if(selectedSection){
+    if(selected){
 
-        selectedSection.classList.add(
+        selected.classList.add(
             "visible"
         );
 
     }
 
 
-    sbItems.forEach(button => {
-
-        button.classList.remove(
-            "active"
-        );
+    resetNavigation();
 
 
-        if(
-            button.dataset.section ===
-            sectionId
-        ){
+    sbItems.forEach(
+        button => {
 
-            button.classList.add(
-                "active"
-            );
+            if(
+                button.dataset.section ===
+                sectionId
+            ){
+
+                button.classList.add(
+                    "active"
+                );
+
+            }
 
         }
-
-    });
+    );
 
 
     window.scrollTo({
@@ -4191,27 +4274,29 @@ function showSection(sectionId){
 
 
 /* =========================================================
-   NAVIGATION
+   NAVIGATION EVENTS
 ========================================================= */
 
-navigationButtons.forEach(button => {
+navigationButtons.forEach(
+    button => {
 
-    button.addEventListener(
-        "click",
-        () => {
+        button.addEventListener(
+            "click",
+            function(){
 
-            showSection(
-                button.dataset.section
-            );
+                showSection(
+                    button.dataset.section
+                );
 
-        }
-    );
+            }
+        );
 
-});
+    }
+);
 
 
 /* =========================================================
-   HOME BUTTON
+   HOME EVENTS
 ========================================================= */
 
 homeButton.addEventListener(
@@ -4219,10 +4304,6 @@ homeButton.addEventListener(
     showHome
 );
 
-
-/* =========================================================
-   LOGO
-========================================================= */
 
 homeLogo.addEventListener(
     "click",
@@ -4243,7 +4324,7 @@ homeLogo.addEventListener(
 function playWelcome(){
 
     /*
-       Cancel previous animation timer.
+       Clear previous timer.
     */
 
     if(walkTimer){
@@ -4256,17 +4337,7 @@ function playWelcome(){
 
 
     /*
-       Check reduced motion.
-    */
-
-    const reduced =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-
-    /*
-       Reset all states.
+       Reset all classes.
     */
 
     character.classList.remove(
@@ -4276,16 +4347,26 @@ function playWelcome(){
     );
 
 
+    waveHand.classList.remove(
+        "show"
+    );
+
+
     introBubble.classList.remove(
         "show"
     );
 
 
     /*
-       ======================================================
-       REDUCED MOTION
-       ======================================================
+       Reduced-motion users:
+       immediately show seated state.
     */
+
+    const reduced =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
 
     if(reduced){
 
@@ -4303,88 +4384,157 @@ function playWelcome(){
 
 
     /*
-       ======================================================
-       STEP 1
-       BUSINESSWOMAN ENTERS
-       ======================================================
+       =====================================================
+       STEP 1 — WALK
+       =====================================================
     */
 
-    requestAnimationFrame(function(){
+    requestAnimationFrame(
+        function(){
 
-        requestAnimationFrame(function(){
+            requestAnimationFrame(
+                function(){
 
-            character.classList.add(
-                "walking"
+                    character.classList.add(
+                        "walking"
+                    );
+
+                }
             );
 
-        });
-
-    });
+        }
+    );
 
 
     /*
-       ======================================================
-       STEP 2
-       STOP + GREETING
-       ======================================================
+       =====================================================
+       STEP 2 — STOP AND WAVE
+       =====================================================
     */
 
     walkTimer =
-        setTimeout(function(){
+        setTimeout(
+            function(){
 
-            character.classList.remove(
-                "walking"
-            );
+                /*
+                   Stop walking.
+                */
+
+                character.classList.remove(
+                    "walking"
+                );
 
 
-            character.classList.add(
-                "waving"
-            );
+                /*
+                   Enter greeting state.
+                */
+
+                character.classList.add(
+                    "waving"
+                );
 
 
-            /*
-               =================================================
-               STEP 3
-               SIT DOWN
-               =================================================
-            */
+                /*
+                   Show actual animated
+                   greeting hand.
+                */
 
-            walkTimer =
-                setTimeout(function(){
+                waveHand.classList.add(
+                    "show"
+                );
 
-                    character.classList.remove(
-                        "waving"
+
+                /*
+                   =================================================
+                   STEP 3 — SIT
+                   =================================================
+                */
+
+                walkTimer =
+                    setTimeout(
+                        function(){
+
+                            /*
+                               Stop hand animation.
+                            */
+
+                            waveHand.classList.remove(
+                                "show"
+                            );
+
+
+                            /*
+                               Remove greeting state.
+                            */
+
+                            character.classList.remove(
+                                "waving"
+                            );
+
+
+                            /*
+                               Sit down.
+                            */
+
+                            character.classList.add(
+                                "seated"
+                            );
+
+
+                            /*
+                               =================================================
+                               STEP 4 — CHATBOX
+                               =================================================
+
+                               Wait a little after sitting so
+                               the box does not appear while
+                               the woman is still moving.
+                            */
+
+                            setTimeout(
+                                function(){
+
+                                    introBubble.classList.add(
+                                        "show"
+                                    );
+
+                                },
+                                700
+                            );
+
+
+                        },
+                        2200
                     );
 
 
-                    character.classList.add(
-                        "seated"
-                    );
-
-
-                    /*
-                       Show chatbox AFTER
-                       the character is seated.
-                    */
-
-                    introBubble.classList.add(
-                        "show"
-                    );
-
-
-                },1800);
-
-
-        },1800);
+            },
+            1800
+        );
 
 }
 
 
 /* =========================================================
-   START
+   START ANIMATION
 ========================================================= */
 
-playWelcome();
+window.addEventListener(
+    "load",
+    function(){
+
+        /*
+           Small delay makes the entrance
+           feel intentional after page load.
+        */
+
+        setTimeout(
+            playWelcome,
+            300
+        );
+
+    }
+);
 
 </script>
 
