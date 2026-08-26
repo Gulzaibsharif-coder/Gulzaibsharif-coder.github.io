@@ -4225,7 +4225,7 @@ function playWelcome(){
 
     /*
        =====================================================
-       STEP 2 — STOP AND WAVE
+       STEP 2 — STOP, SIT, AND SHOW CHATBOX IMMEDIATELY
        =====================================================
     */
 
@@ -4243,67 +4243,23 @@ function playWelcome(){
 
 
                 /*
-                   Enter greeting state.
+                   Sit down.
                 */
 
                 character.classList.add(
-                    "waving"
+                    "seated"
                 );
 
 
                 /*
-                   =================================================
-                   STEP 3 — SIT
-                   =================================================
+                   Show the chatbox right away —
+                   as soon as the character has
+                   arrived, not after any extra wait.
                 */
 
-                walkTimer =
-                    setTimeout(
-                        function(){
-
-                            /*
-                               Remove greeting state.
-                            */
-
-                            character.classList.remove(
-                                "waving"
-                            );
-
-
-                            /*
-                               Sit down.
-                            */
-
-                            character.classList.add(
-                                "seated"
-                            );
-
-
-                            /*
-                               =================================================
-                               STEP 4 — CHATBOX
-                               =================================================
-
-                               Wait a little after sitting so
-                               the box does not appear while
-                               the woman is still moving.
-                            */
-
-                            setTimeout(
-                                function(){
-
-                                    introBubble.classList.add(
-                                        "show"
-                                    );
-
-                                },
-                                700
-                            );
-
-
-                        },
-                        2200
-                    );
+                introBubble.classList.add(
+                    "show"
+                );
 
 
             },
