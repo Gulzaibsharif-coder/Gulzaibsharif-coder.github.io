@@ -885,154 +885,6 @@ select{
 
 
 /* =========================================================
-   WAVING HAND
-========================================================= */
-
-/*
-   Because businesswoman.png is a flat image,
-   the actual arm inside that image cannot be
-   animated independently.
-
-   This creates a separate greeting hand.
-*/
-
-.wave-hand{
-
-    position:absolute;
-
-    left:42%;
-
-    top:115px;
-
-    width:55px;
-
-    height:95px;
-
-    z-index:7;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transform:
-        rotate(-20deg)
-        scale(.7);
-
-    transform-origin:
-        50% 90%;
-
-}
-
-
-/* Forearm */
-
-.wave-hand::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:20px;
-
-    bottom:2px;
-
-    width:17px;
-
-    height:57px;
-
-    border-radius:
-        12px 12px 6px 6px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #D99A74,
-            #F0BE98
-        );
-
-    transform:
-        rotate(-16deg);
-
-}
-
-
-/* Palm */
-
-.wave-hand::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:6px;
-
-    top:3px;
-
-    width:40px;
-
-    height:40px;
-
-    border-radius:
-        48% 52% 48% 46%;
-
-    background:
-        linear-gradient(
-            145deg,
-            #F3C39D,
-            #DD9B75
-        );
-
-    box-shadow:
-        inset -3px -3px 0
-        rgba(120,60,40,.08);
-
-}
-
-
-/* =========================================================
-   WAVING ANIMATION
-========================================================= */
-
-.wave-hand.show{
-
-    opacity:1;
-
-    transform:
-        rotate(-20deg)
-        scale(1);
-
-    animation:
-        handWave
-        .45s
-        ease-in-out
-        infinite alternate;
-
-}
-
-@keyframes handWave{
-
-    0%{
-
-        transform:
-            rotate(-38deg)
-            translateY(0)
-            scale(1);
-
-    }
-
-    100%{
-
-        transform:
-            rotate(28deg)
-            translateY(-5px)
-            scale(1.03);
-
-    }
-
-}
-
-
-/* =========================================================
    CHATBOX
 ========================================================= */
 
@@ -2256,22 +2108,6 @@ footer{
 
     }
 
-    /*
-       Wave hand on mobile.
-    */
-
-    .wave-hand{
-
-        left:58%;
-
-        top:190px;
-
-        transform:
-            rotate(-20deg)
-            scale(.85);
-
-    }
-
     .highlights{
 
         grid-template-columns:1fr;
@@ -2716,15 +2552,6 @@ footer{
                 class="character"
                 id="character"
             >
-
-
-            <!-- ANIMATED GREETING HAND -->
-
-            <div
-                class="wave-hand"
-                id="waveHand"
-                aria-hidden="true"
-            ></div>
 
 
             <!-- CHATBOX -->
@@ -4128,11 +3955,6 @@ const character =
         "character"
     );
 
-const waveHand =
-    document.getElementById(
-        "waveHand"
-    );
-
 const introBubble =
     document.getElementById(
         "introBubble"
@@ -4347,11 +4169,6 @@ function playWelcome(){
     );
 
 
-    waveHand.classList.remove(
-        "show"
-    );
-
-
     introBubble.classList.remove(
         "show"
     );
@@ -4435,16 +4252,6 @@ function playWelcome(){
 
 
                 /*
-                   Show actual animated
-                   greeting hand.
-                */
-
-                waveHand.classList.add(
-                    "show"
-                );
-
-
-                /*
                    =================================================
                    STEP 3 — SIT
                    =================================================
@@ -4453,15 +4260,6 @@ function playWelcome(){
                 walkTimer =
                     setTimeout(
                         function(){
-
-                            /*
-                               Stop hand animation.
-                            */
-
-                            waveHand.classList.remove(
-                                "show"
-                            );
-
 
                             /*
                                Remove greeting state.
